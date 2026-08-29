@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('c:/Users/nadia/Documents/PERSONAL/nadia-portfolio/src/content/projects.json', 'utf8'\\)\\); console.log\\('JSON válido'\\)\")"
+    ]
+  }
+}
