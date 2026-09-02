@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 
-const RUN = 500
+const RUN = 1000
 const ALT = 250
 const REVEAL = 660
 
 export default function Loader({ word, words }) {
-  const list = words && words.length ? words : [word || 'Hola']
+  const list = words && words.length ? words : (word ? [word] : ['Hello', 'Hola', '안녕하세요', 'مرحبا'])
   const [wordIndex, setWordIndex] = useState(0)
   const [revealing, setRevealing] = useState(false)
   const [hidden, setHidden] = useState(false)

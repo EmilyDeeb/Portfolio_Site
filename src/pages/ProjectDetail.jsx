@@ -32,6 +32,52 @@ export default function ProjectDetail() {
 
   const isUrbanDesign = project?.category === 'urban-design'
 
+  // Scroll-synced rail: accumulate findings/future notes as each body
+  // section is reached; fade the rail out once the images/end is reached.
+  const [revealedCount, setRevealedCount] = useState(0)
+  const [railFaded, setRailFaded] = useState(false)
+
+  useEffect(() => {
+    setRevealedCount(0)
+    setRailFaded(false)
+    const bodyLen = project?.body?.length ?? 0
+    if (!bodyLen) return
+
+    const onScroll = () => {
+      const trigger = window.innerHeight * 0.55
+      let count = 0
+      for (let i = 0; i < bodyLen; i++) {
+        const el = document.getElementById(`sec-${i}`)
+        if (el && el.getBoundingClientRect().top < trigger) count = i + 1
+      }
+      setRevealedCount(count)
+
+      const endEl = document.getElementById('images') || document.getElementById('outcome')
+      if (endEl) setRailFaded(endEl.getBoundingClientRect().top < trigger)
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [id, project])
+
+  const revealedFindings = useMemo(
+    () => (project?.body ?? [])
+      .map((s, i) => ({ ...s, i }))
+      .filter((s) => s.i < revealedCount && s.finding),
+    [project, revealedCount]
+  )
+  const revealedFuture = useMemo(
+    () => (project?.body ?? [])
+      .map((s, i) => ({ ...s, i }))
+      .filter((s) => s.i < revealedCount && s.future),
+    [project, revealedCount]
+  )
+
   const sections = useMemo(() => {
     const list = []
     project?.body?.forEach((section, i) => {
@@ -194,7 +240,7 @@ export default function ProjectDetail() {
 
             {project.hero_image && (
               <div className="cs-head-media">
-                <img className="figimg" src={`${import.meta.env.BASE_URL}images/${project.hero_image}`} alt={project.title} />
+                <img className="figimg figimg--uncropped" src={`${import.meta.env.BASE_URL}images/${project.hero_image}`} alt={project.title} />
               </div>
             )}
           </div>
@@ -233,32 +279,24 @@ export default function ProjectDetail() {
 
               {project.images?.length > 0 && !project.images_inline && (
                 <section className="sec" id="images">
-                  <p className="sec__label"><span className="n">img</span> Images</p>
-                  <div className="exhibits">
+                  <p className="sec__label"><span className="n">img</span> All images</p>
+                  <div className="img-strip">
                     {project.images.map((img, i) => (
-                      <figure className="exhibit" key={i}>
-                        <div className="exhibit__head">
-                          <span><span className="ex-n">{String(i + 1).padStart(2, '0')}</span></span>
-                        </div>
-                        <button
-                          type="button"
-                          className="figzoom"
-                          aria-label="Expand image to full size"
-                          onClick={() => setLightboxIndex(i)}
-                        >
-                          <img
-                            className={`figimg r-16-10${isUrbanDesign && img.file.endsWith('.png') ? ' blend' : ''}`}
-                            src={`${import.meta.env.BASE_URL}images/${img.file}`}
-                            alt={img.caption}
-                            loading="lazy"
-                          />
-                        </button>
-                        {img.caption && (
-                          <figcaption className="exhibit__cap">
-                            <p>{img.caption}</p>
-                          </figcaption>
-                        )}
-                      </figure>
+                      <button
+                        type="button"
+                        className="img-strip__item"
+                        key={i}
+                        aria-label={`Expand image ${i + 1} to full size`}
+                        onClick={() => setLightboxIndex(i)}
+                      >
+                        <img
+                          className="img-strip__img"
+                          src={`${import.meta.env.BASE_URL}images/${img.file}`}
+                          alt={img.caption}
+                          loading="lazy"
+                        />
+                        <span className="img-strip__n">{String(i + 1).padStart(2, '0')}</span>
+                      </button>
                     ))}
                   </div>
                 </section>
@@ -278,6 +316,63 @@ export default function ProjectDetail() {
                 </section>
               )}
             </div>
+
+            <aside className={`cs-rail${railFaded ? ' is-faded' : ''}`} aria-label="Project notes" aria-hidden={railFaded ? 'true' : undefined}>
+              <div className="cs-rail__inner">
+                {metaFields.length > 0 && (
+                  <dl className="cs-rail__meta">
+                    {metaFields.map((f) => (
+                      <div className="cs-rail__row" key={f.label}>
+                        <dt>{f.label}</dt>
+                        <dd>{f.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
+
+                {revealedFindings.length > 0 && (
+                  <div className="cs-rail__block">
+                    <p className="cs-rail__h">Key findings</p>
+                    <ul className="cs-rail__notes">
+                      {revealedFindings.map((s) => (
+                        <li
+                          key={s.i}
+                          className={`cs-rail__note${s.i === revealedCount - 1 ? ' is-current' : ''}`}
+                        >
+                          {s.finding}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {revealedFuture.length > 0 && (
+                  <div className="cs-rail__block">
+                    <p className="cs-rail__h">Future work</p>
+                    <ul className="cs-rail__notes cs-rail__notes--future">
+                      {revealedFuture.map((s) => (
+                        <li key={s.i} className="cs-rail__note">{s.future}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {(project.external_url || project.github_url) && (
+                  <div className="cs-rail__links">
+                    {project.external_url && (
+                      <a href={project.external_url} target="_blank" rel="noreferrer" className="btn">
+                        explore the app <span className="ar" aria-hidden="true">→</span>
+                      </a>
+                    )}
+                    {project.github_url && (
+                      <a href={project.github_url} target="_blank" rel="noreferrer" className="btn btn-ghost">
+                        {project.github_note ?? 'GitHub'} ↗
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            </aside>
           </div>
         </div>
       </div>

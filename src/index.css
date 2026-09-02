@@ -1,8 +1,8 @@
 /* =========================================================
-   Nadia Cabrera Salazar — Portfolio
+   Emily Deeb — Portfolio
    Structure ported from a brutalist ledger template (borders
    not shadows, sharp corners, mono chrome + serif headlines),
-   retokened entirely to her own palette and type:
+   retokened to a blue/cream palette:
    indigo accent, cream paper, Lora + Satoshi.
    ========================================================= */
 
@@ -866,13 +866,24 @@ button.btn { line-height: 1; }
   width: 100%;
   text-align: left;
 }
-.cs-next:hover { background: var(--acc); }
-.cs-next:hover, .cs-next:hover * { color: var(--paper); }
-.cs-next .nx-label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--mute); margin-bottom: 0.5rem; }
+.cs-next > span { display: flex; flex-direction: column; gap: 0.85rem; }
+.cs-next .nx-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--mute);
+}
 .cs-next .nx-title { font-size: clamp(1.3rem, 2.8vw, 2rem); max-width: 18ch; color: var(--acc); }
 .cs-next .nx-ar { font-size: clamp(1.5rem, 3vw, 2.25rem); flex: none; }
 .cs-next.next { text-align: right; }
 .cs-next[disabled], .cs-next-empty { visibility: hidden; }
+
+/* hover: blue background, white text */
+.cs-next:hover { background: var(--acc); }
+.cs-next:hover .nx-label,
+.cs-next:hover .nx-title,
+.cs-next:hover .nx-ar { color: var(--paper); }
 
 /* =========================================================
    LOADER
@@ -1001,4 +1012,234 @@ button.btn { line-height: 1; }
 }
 @media (max-width: 768px) {
   .cs-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   PROJECT LAYOUT — hero, image strip, info rail (Emily)
+   ========================================================= */
+
+/* Hero — never crop (legends live at the edges) */
+.cs-head-media .figimg--uncropped {
+  aspect-ratio: auto;
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+  background: var(--paper-2);
+}
+
+/* End-of-page: horizontal scroll strip of thumbnails */
+.img-strip {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 0.5rem 0 1.25rem;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+.img-strip__item {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(180px, 26vw, 300px);
+  padding: 0;
+  border: 1px solid var(--line-2);
+  background: var(--paper-2);
+  cursor: zoom-in;
+  scroll-snap-align: start;
+  transition: border-color 0.12s var(--ease);
+}
+.img-strip__item:hover,
+.img-strip__item:focus-visible { border-color: var(--acc); outline: none; }
+.img-strip__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: var(--paper-2);
+}
+.img-strip__n {
+  position: absolute;
+  top: 0; left: 0;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: var(--paper);
+  background: var(--acc);
+  padding: 0.25em 0.5em;
+}
+.img-strip::-webkit-scrollbar { height: 8px; }
+.img-strip::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 999px; }
+.img-strip::-webkit-scrollbar-track { background: transparent; }
+
+/* =========================================================
+   INFO RAIL (right gutter, sticky, blue)
+   ========================================================= */
+
+/* Three-column grid on wide screens: TOC | main | rail.
+   align-items:start lets the rail cell be sticky. */
+@media (min-width: 1120px) {
+  .cs-body .cs-grid {
+    grid-template-columns: 12rem minmax(0, 1fr) 16rem !important;
+    gap: 0 clamp(2rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+}
+
+.cs-rail { display: none; }
+@media (min-width: 1120px) {
+  .cs-rail {
+    display: block;
+    position: sticky;
+    top: 4.5rem;
+    align-self: start;
+  }
+}
+.cs-rail__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-left: 2px solid var(--acc);
+  padding-left: 1.25rem;
+}
+
+/* Meta: bold blue label, regular value, inline */
+.cs-rail__meta { margin: 0; }
+.cs-rail__row {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.cs-rail__row:first-child { padding-top: 0; }
+.cs-rail__row dt {
+  display: inline;
+  font-weight: 700;
+  color: var(--acc);
+  margin: 0 0.4em 0 0;
+}
+.cs-rail__row dd {
+  display: inline;
+  margin: 0;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+/* Rail section headings */
+.cs-rail__h {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--acc);
+  margin-bottom: 0.7rem;
+}
+
+/* Tools as blue-tinted chips */
+.cs-rail__tools { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.cs-rail__tools li {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--acc);
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  padding: 0.25em 0.7em;
+}
+
+/* Outcome as blue bullet points: bold value, regular label */
+.cs-rail__metrics { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.cs-rail__metric {
+  position: relative;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.cs-rail__metric::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  background: var(--acc);
+  border-radius: 50%;
+}
+.cs-rail__big { font-weight: 700; color: var(--acc); margin-right: 0.35em; }
+.cs-rail__lab { font-weight: 400; color: var(--ink); }
+
+.cs-rail__links { display: flex; flex-direction: column; gap: 0.6rem; }
+.cs-rail__links .btn { justify-content: center; }
+
+/* =========================================================
+   INFO RAIL — scroll-synced findings + future work
+   ========================================================= */
+
+/* purple accent for future-work */
+:root { --purple: #7c3aed; }
+
+/* wider + breathing room (bigger rail, more gap) */
+@media (min-width: 1120px) {
+  .cs-body .cs-grid {
+    grid-template-columns: 12rem minmax(0, 1fr) 27rem !important;
+    gap: 0 clamp(3rem, 5vw, 5.5rem);
+    align-items: start;
+  }
+}
+
+/* rail scaled up ~20% */
+.cs-rail__inner { gap: 1.9rem; padding-left: 1.5rem; border-left-width: 3px; }
+.cs-rail__h { font-size: 0.74rem; margin-bottom: 0.9rem; }
+.cs-rail__row { font-size: 1rem; padding: 0.7rem 0; }
+
+/* fade the whole rail out at the end */
+.cs-rail {
+  transition: opacity 0.4s var(--ease), visibility 0.4s var(--ease);
+}
+.cs-rail.is-faded { opacity: 0; visibility: hidden; }
+
+/* accumulating note lists */
+.cs-rail__notes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+.cs-rail__note {
+  position: relative;
+  padding-left: 1.3rem;
+  font-size: 1.12rem;
+  line-height: 1.55;
+  color: var(--ink);
+  opacity: 0.75;                         /* past findings dim */
+  transform: translateY(2px);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), color 0.35s var(--ease);
+  animation: rail-note-in 0.4s var(--ease) both;
+}
+
+.cs-rail__note::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  background: var(--acc);
+  border-radius: 50%;
+}
+.cs-rail__note.is-current { opacity: 1; color: var(--ink); }   /* newest finding is full-strength */
+
+/* Future work — purple pop, full strength (no dimming, upright) */
+.cs-rail__block:has(.cs-rail__notes--future) .cs-rail__h { color: var(--purple); }
+.cs-rail__notes--future .cs-rail__note {
+  font-style: normal;
+  font-size: 1.06rem;
+  color: var(--ink);
+  opacity: 0.9;
+}
+.cs-rail__notes--future .cs-rail__note::before {
+  background: var(--purple);
+  border: none;
+}
+
+@keyframes rail-note-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 0.75; transform: translateY(2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-rail__note { animation: none; }
 }

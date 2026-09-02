@@ -10,7 +10,7 @@ import NotFound from './pages/NotFound'
 import data from './content/projects.json'
 
 function loaderPropsFor(pathname) {
-  if (pathname === '/') return { words: ['Hello', 'Hola'] }
+  if (pathname === '/') return { words: ['Hello', 'Hola', '안녕하세요', 'مرحبا'] }
   if (pathname === '/work') return { word: 'Work' }
   if (pathname === '/about') return { word: 'About' }
   const match = pathname.match(/^\/projects\/(.+)$/)

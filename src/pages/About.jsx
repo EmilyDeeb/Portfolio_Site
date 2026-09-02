@@ -35,7 +35,7 @@ export default function About() {
 
           <img
             className="figimg r-3-2 about-prose-fig"
-            src={`${import.meta.env.BASE_URL}images/projects/aboutme/about-1.jpg`}
+            src={`${import.meta.env.BASE_URL}images/projects/aboutme/about.jpeg`}
             alt="Emily Deeb"
           />
         </div>
@@ -43,7 +43,7 @@ export default function About() {
         <aside className="about-side">
           <img
             className="figimg r-3-4 about-portrait"
-            src={`${import.meta.env.BASE_URL}images/projects/aboutme/portrait.png`}
+            src={`${import.meta.env.BASE_URL}images/projects/aboutme/FotoEmily.jpg`}
             alt="Portrait of Emily Deeb"
           />
           <dl className="facts" aria-label="At a glance">
