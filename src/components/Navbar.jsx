@@ -12,7 +12,7 @@ export default function Navbar() {
     <header className="nav">
       <div className="nav-inner">
         <Link to="/" className="brand" aria-label={`${designer.name} — home`}>
-          <SplitFlapBrand from="Emily Deeb" to="Portfolio" />
+          <SplitFlapBrand from={designer.name} to={designer.name} />
         </Link>
         <nav className="nav-links" aria-label="Primary">
           <Link to="/work" aria-current={isActive('/work') ? 'page' : undefined}>Work</Link>
