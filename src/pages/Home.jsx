@@ -84,7 +84,7 @@ export default function Home() {
         <p className="h3">{about.positioning}</p>
       </section>
 
-      {/* ── About + contact ── */}
+            {/* ── About + contact ── */}
       <section aria-label="About and contact">
         <div className="row entry-first">
           <div className="row__side"><span>about</span></div>
@@ -102,6 +102,9 @@ export default function Home() {
               <a className="btn" href={`mailto:${designer.email}`}>{designer.email}</a>
               <a className="btn btn-ghost" href={designer.linkedin} target="_blank" rel="noreferrer">
                 linkedin <span className="ar" aria-hidden="true">→</span>
+              </a>
+              <a className="btn btn-ghost" href={`${import.meta.env.BASE_URL}cv/Emily_Deeb_CV.pdf`} target="_blank" rel="noreferrer">
+                CV <span className="ar" aria-hidden="true">↓</span>
               </a>
             </div>
           </div>

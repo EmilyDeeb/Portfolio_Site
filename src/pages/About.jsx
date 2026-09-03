@@ -31,6 +31,9 @@ export default function About() {
               {designer.email} <span className="ar" aria-hidden="true">⧉</span>
             </a>
             <Link className="btn btn-ghost" to="/work">see the work</Link>
+            <a className="btn btn-ghost" href={`${import.meta.env.BASE_URL}CV/Emily_Deeb_CV_DS.pdf`} target="_blank" rel="noreferrer">
+              CV <span className="ar" aria-hidden="true">⧉</span>
+            </a>
           </div>
 
           <img
