@@ -918,8 +918,8 @@ button.btn { line-height: 1; }
   z-index: 9999;
   display: grid;
   place-items: center;
-  background: #d8dcff;                       /* light blue */
-  color: #0f1c4d;
+  background: #0f1c4d;                       /* navy loading screen */
+  color: #ffffff;
   transform: translateY(0);
   transition: transform 0.66s cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform;
@@ -931,8 +931,8 @@ button.btn { line-height: 1; }
   height: 150px;
   box-sizing: border-box;
   padding-bottom: 15px;
-  background: #0f1c4d;                       /* navy box on light bg */
-  border: 1px solid #0f1c4d;
+  background: #afb8fc;                       /* light box on navy */
+  border: 1px solid #afb8fc;
   display: grid;
   place-items: center;
 }
@@ -940,18 +940,18 @@ button.btn { line-height: 1; }
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.55rem;
-  color: #ffffff;                           /* white greeting inside navy box */
+  color: #0f1c4d;                           /* dark navy text inside light box */
   text-align: center;
   line-height: 1.12;
   text-wrap: balance;
   padding-inline: 0.5rem;
 }
-.loader__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 15px; border-top: 1px solid rgba(255, 255, 255, 0.35); overflow: hidden; }
+.loader__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 15px; border-top: 1px solid rgba(15, 28, 77, 0.30); overflow: hidden; }
 .loader__bar > span {
   display: block;
   height: 100%;
   width: 0%;
-  background: #afb8fc;                       /* light-blue progress fill */
+  background: #0f1c4d;                       /* navy progress fill on light box */
   animation: loader-fill var(--loader-run, 1000ms) linear forwards;
 }
 @keyframes loader-fill { from { width: 0%; } to { width: 100%; } }
