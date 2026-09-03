@@ -513,7 +513,7 @@ button.btn { line-height: 1; }
 /* Dark banner surface — hero + page headers. Re-scopes tokens
    so every descendant adapts to the dark (ink) ground. */
 .hero, .page-head {
-  background: #4265d6;
+  background: #445ac6;
   color: var(--ink);
   --paper:   #1A1A1A;
   --paper-2: #242430;
