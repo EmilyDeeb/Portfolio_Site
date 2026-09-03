@@ -515,14 +515,14 @@ button.btn { line-height: 1; }
 .hero, .page-head {
   background: #0f1c4d;
   color: var(--ink);
-  --paper:   #1A1A1A;
-  --paper-2: #242430;
-  --ink:     #F7F6F0;
-  --mute:    #B0AFC4;
-  --faint:   #85839C;
-  --line:    rgba(184, 192, 240, 0.18);
-  --line-2:  rgba(184, 192, 240, 0.36);
-  --acc:     #b0b9ff;
+  --paper:   #0f1c4d;
+  --paper-2: #1a274f;
+  --ink:     #ffffff;        /* crisp white text */
+  --mute:    #c5c8dc;        /* brighter so eyebrow reads on the dark bg */
+  --faint:   #8f93b5;
+  --line:    rgba(175, 184, 252, 0.18);
+  --line-2:  rgba(175, 184, 252, 0.34);
+  --acc:     #afb8fc;        /* light blue — glows on the dark navy */
 }
 
 .hero {
