@@ -1255,7 +1255,7 @@ button.btn { line-height: 1; }
   z-index: 0;
   pointer-events: none;
   opacity: 0.7;
-  filter: blur(0.3px);
+  filter: blur(0.1px);
 }
 
 /* middle layer: soft halo behind the text, sits ABOVE canvas, BELOW text */
