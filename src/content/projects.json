@@ -24,7 +24,7 @@
       { "label": "focus", "value": "Location Intelligence & Mobility" },
       { "label": "languages", "value": "Arabic, English, Hebrew" }
     ],
-    "contactInvite": "I'm always pleased to discuss cities, retail and mobility data, location intelligence, and the way in which spatial analysis can help in making better decisions. If you have a project in mind, are looking for a particular role, or simply want to get in touch, I'd be happy to hear from you."
+    "contactInvite": "I'm always happy to discuss cities, retail and mobility data, location intelligence, and the ways in which spatial analysis can support better decision-making. If you have a project in mind, are looking for a specific role, or simply want to get in touch, I would love to hear from you."
   },
 
   "projects": [
@@ -274,7 +274,7 @@
       "category": "urban-design",
       "tags": ["Spatial statistics", "Mixed-effects models", "Housing"],
       "tools": ["R", "PCA", "Linear Mixed-Effects", "K-means", "Spatial analysis"],
-      "year": "2026",
+      "year": "2025",
       "location": "London, UK",
       "role": "Researcher · MSc module project",
       "institution": "CASA, UCL",
@@ -449,7 +449,7 @@
       "category": "data",
       "tags": ["Interactive web", "In progress"],
       "tools": ["TBD"],
-      "year": "2026",
+      "year": "2025",
       "location": "London, UK",
       "role": "Developer & designer",
       "institution": "Personal project",

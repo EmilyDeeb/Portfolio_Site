@@ -17,8 +17,8 @@
   --line:    rgba(76, 95, 224, 0.14);
   --line-2:  rgba(76, 95, 224, 0.30);
 
-  --acc:     #3953d7;   /* indigo — buttons, links, emphasis, borders */
-  --acc-2:   #bdc4ed;   /* pale indigo — soft highlights, "copied" state */
+  --acc:     #0f1c4d;   /* indigo — buttons, links, emphasis, borders */
+  --acc-2:   #c3c9e0;   /* pale indigo — soft highlights, "copied" state */
 
   --font-serif: 'Lora', Georgia, serif;
   --font-sans:  'Satoshi', system-ui, sans-serif;
