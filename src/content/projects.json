@@ -5,9 +5,9 @@
     "tagline": "The application of location intelligence to the retail sector, to mobility, and to the way people move around cities—transforming behavioural and spatial data into decisions.",
     "location": "London",
     "email": "emilymdeeb@gmail.com",
-    "linkedin": "https://linkedin.com/in/emilydeeb",
+    "linkedin": "https://www.linkedin.com/in/emilymdeeb/",
     "github": "https://github.com/EmilyDeeb",
-    "cv_url": ""
+    "cv_url": "${import.meta.env.BASE_URL}CV/Emily_Deeb_CV_DS.pdf"
   },
 
   "about": {
@@ -280,7 +280,7 @@
       "institution": "CASA, UCL",
       "featured": false,
       "external_url": "",
-      "github_url": "https://github.com/EmilyDeeb/REPO-NAME",
+      "github_url": "https://github.com/EmilyDeeb/0007-QM",
 
       "hero_image": "projects/fertility-london/hero.png",
       "images": [
@@ -344,7 +344,7 @@
       "github_note": "collaborative project",
       "featured": false,
       "external_url": "https://emilydeeb.github.io/0025_BSA-Group/",
-      "github_url": "https://github.com/EmilyDeeb/REPO-NAME",
+      "github_url": "https://github.com/EmilyDeeb/0025_BSA-Group",
 
       "hero_image": "projects/cordillera-blanca/hero.png",
       "images": [
