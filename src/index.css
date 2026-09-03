@@ -918,7 +918,7 @@ button.btn { line-height: 1; }
   z-index: 9999;
   display: grid;
   place-items: center;
-  background: #0f1c4d;                       /* navy, matches hero */
+  background: #5069c2;                       /* navy, matches hero */
   color: #ffffff;
   transform: translateY(0);
   transition: transform 0.66s cubic-bezier(0.76, 0, 0.24, 1);
