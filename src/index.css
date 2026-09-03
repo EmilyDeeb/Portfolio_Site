@@ -17,7 +17,7 @@
   --line:    rgba(76, 95, 224, 0.14);
   --line-2:  rgba(76, 95, 224, 0.30);
 
-  --acc:     #3348d2;   /* indigo — buttons, links, emphasis, borders */
+  --acc:     #3953d7;   /* indigo — buttons, links, emphasis, borders */
   --acc-2:   #bdc4ed;   /* pale indigo — soft highlights, "copied" state */
 
   --font-serif: 'Lora', Georgia, serif;
@@ -522,7 +522,7 @@ button.btn { line-height: 1; }
   --faint:   #85839C;
   --line:    rgba(184, 192, 240, 0.18);
   --line-2:  rgba(184, 192, 240, 0.36);
-  --acc:     #afb8fc;
+  --acc:     #b0b9ff;
 }
 
 .hero {
