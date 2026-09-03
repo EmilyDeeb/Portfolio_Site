@@ -1268,7 +1268,7 @@ button.btn { line-height: 1; }
   background: radial-gradient(
     ellipse 55% 45% at center,
     rgba(32, 100, 210, 0.85) 0%,
-    rgba(32, 55, 210, 0.45) 40%,
+    rgba(32, 55, 210, 0.45) 10%,
     transparent 75%
   );
 }
