@@ -718,7 +718,7 @@ button.btn { line-height: 1; }
   background: var(--paper-2);
 }
 .positioning .h3 {
-  max-width: 46ch;
+  max-width: 38ch;
   font-size: clamp(1.2rem, 2.4vw, 1.7rem);
   line-height: 1.4;
   font-style: normal;
