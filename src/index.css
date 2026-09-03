@@ -175,8 +175,8 @@ button.btn { line-height: 1; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--paper);
-  border-bottom: 1px solid var(--line);
+  background: #0f1c4d;                       /* dark navy, matches hero */
+  border-bottom: 1px solid rgba(175, 184, 252, 0.20);
 }
 .nav-inner {
   display: flex;
@@ -193,7 +193,7 @@ button.btn { line-height: 1; }
   gap: 0.6em;
   padding-block: 0.85rem;
   letter-spacing: 0.01em;
-  color: var(--acc);
+  color: #ffffff;                           /* white brand on navy */
   white-space: nowrap;
 }
 
@@ -226,13 +226,13 @@ button.btn { line-height: 1; }
 .nav-links a {
   display: inline-flex;
   align-items: center;
-  color: var(--acc);
+  color: #ffffff;                           /* white links on navy */
   padding: 0 clamp(0.9em, 2vw, 1.3em);
-  border-left: 1px solid var(--line-2);
+  border-left: 1px solid rgba(175, 184, 252, 0.22);
   transition: background 0.12s var(--ease), color 0.12s var(--ease);
 }
-.nav-links a:last-child { border-right: 1px solid var(--line-2); }
-.nav-links a:hover, .nav-links a[aria-current="page"] { background: var(--acc); color: var(--paper); }
+.nav-links a:last-child { border-right: 1px solid rgba(175, 184, 252, 0.22); }
+.nav-links a:hover, .nav-links a[aria-current="page"] { background: #afb8fc; color: #0f1c4d; }
 .nav-status { display: none; }
 @media (min-width: 760px) { .nav-status { display: inline-flex; } }
 .nav-desktop { display: none; }
@@ -560,6 +560,30 @@ button.btn { line-height: 1; }
   flex: none;
 }
 
+/* Clean, consistent hero button hovers on the navy background.
+   Solid button: light-blue fill → white fill on hover (both with navy text).
+   Ghost button: outlined white → fills light-blue with navy text on hover. */
+.hero__cta .btn {
+  border-color: #afb8fc;
+  background: #afb8fc;
+  color: #0f1c4d;
+}
+.hero__cta .btn:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #0f1c4d;
+}
+.hero__cta .btn-ghost {
+  background: transparent;
+  color: #ffffff;
+  border-color: #afb8fc;
+}
+.hero__cta .btn-ghost:hover {
+  background: #afb8fc;
+  border-color: #afb8fc;
+  color: #0f1c4d;
+}
+
 .hero--centered { align-items: center; text-align: center; }
 .hero--centered .hero__center { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 60rem; }
 .hero--centered .hero__eyebrow { justify-content: center; font-size: 1rem; }
@@ -665,7 +689,7 @@ button.btn { line-height: 1; }
 .entry-min .min-name { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; color: var(--acc); }
 .entry-min .min-desc { color: var(--mute); font-size: 0.95rem; }
 .entry-min .min-tag { font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); white-space: nowrap; }
-.entry-min:hover { background: var(--ink); }
+.entry-min:hover { background: #0f1c4d; }
 .entry-min:hover, .entry-min:hover .min-name, .entry-min:hover .min-desc, .entry-min:hover .min-tag,
 .entry-min:hover .entry__side, .entry-min:hover .entry__side .idx { color: var(--paper); }
 .entry-min:hover .min-tag { color: var(--acc-2); }
@@ -747,7 +771,7 @@ button.btn { line-height: 1; }
    CASE STUDY (Project Detail)
    ========================================================= */
 .reading-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 60; background: var(--line); }
-.reading-progress span { display: block; height: 100%; background: var(--ink); transform-origin: 0 50%; transform: scaleX(0); }
+.reading-progress span { display: block; height: 100%; background: #ffffff; transform-origin: 0 50%; transform: scaleX(0); }
 
 .cs-head { padding: clamp(2rem, 5vw, 4rem) var(--pad) clamp(1.75rem, 3.5vw, 2.5rem); }
 .cs-kicker { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--acc); margin-bottom: 1.1rem; }
@@ -894,8 +918,8 @@ button.btn { line-height: 1; }
   z-index: 9999;
   display: grid;
   place-items: center;
-  background: var(--acc-2);
-  color: var(--paper);
+  background: #0f1c4d;                       /* navy, matches hero */
+  color: #ffffff;
   transform: translateY(0);
   transition: transform 0.66s cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform;
@@ -907,8 +931,8 @@ button.btn { line-height: 1; }
   height: 150px;
   box-sizing: border-box;
   padding-bottom: 15px;
-  background: var(--acc);
-  border: 1px solid var(--acc);
+  background: #1a274f;                       /* navy tint box */
+  border: 1px solid #afb8fc;                /* light-blue edge */
   display: grid;
   place-items: center;
 }
@@ -916,7 +940,7 @@ button.btn { line-height: 1; }
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.55rem;
-  color: var(--paper);
+  color: #ffffff;                           /* white greeting */
   text-align: center;
   line-height: 1.12;
   text-wrap: balance;
@@ -927,7 +951,7 @@ button.btn { line-height: 1; }
   display: block;
   height: 100%;
   width: 0%;
-  background: var(--paper);
+  background: #afb8fc;                       /* light-blue progress fill */
   animation: loader-fill var(--loader-run, 1000ms) linear forwards;
 }
 @keyframes loader-fill { from { width: 0%; } to { width: 100%; } }
@@ -1262,4 +1286,37 @@ button.btn { line-height: 1; }
 .hero__center {
   position: relative;
   z-index: 2;
+}
+
+/* =========================================================
+   ABOUT — mobile fixes
+   ========================================================= */
+@media (max-width: 899px) {
+  /* single column, text first, portrait after */
+  .about-wrap {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .about-side {
+    order: 2;            /* portrait + facts go BELOW the prose */
+    position: static;    /* kill sticky on mobile (was causing overlap) */
+    top: auto;
+  }
+  .about-prose {
+    order: 1;            /* text first */
+  }
+
+  /* rein in image sizes */
+  .about-portrait {
+    width: 100%;
+    max-width: 320px;    /* portrait not full-bleed huge */
+    height: auto;
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+  .about-prose-fig {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+  }
 }
