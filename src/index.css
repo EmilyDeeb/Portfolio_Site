@@ -918,8 +918,8 @@ button.btn { line-height: 1; }
   z-index: 9999;
   display: grid;
   place-items: center;
-  background: #afb8fc;                       /* navy, matches hero */
-  color: #ffffff;
+  background: #afb8fc;                       /* light blue */
+  color: #0f1c4d;
   transform: translateY(0);
   transition: transform 0.66s cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform;
@@ -931,8 +931,8 @@ button.btn { line-height: 1; }
   height: 150px;
   box-sizing: border-box;
   padding-bottom: 15px;
-  background: #1a274f;                       /* navy tint box */
-  border: 1px solid #afb8fc;                /* light-blue edge */
+  background: #0f1c4d;                       /* navy box on light bg */
+  border: 1px solid #0f1c4d;
   display: grid;
   place-items: center;
 }
@@ -940,13 +940,13 @@ button.btn { line-height: 1; }
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.55rem;
-  color: #ffffff;                           /* white greeting */
+  color: #ffffff;                           /* white greeting inside navy box */
   text-align: center;
   line-height: 1.12;
   text-wrap: balance;
   padding-inline: 0.5rem;
 }
-.loader__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 15px; border-top: 1px solid rgba(247, 246, 240, 0.35); overflow: hidden; }
+.loader__bar { position: absolute; left: 0; right: 0; bottom: 0; height: 15px; border-top: 1px solid rgba(255, 255, 255, 0.35); overflow: hidden; }
 .loader__bar > span {
   display: block;
   height: 100%;
