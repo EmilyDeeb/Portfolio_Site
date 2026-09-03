@@ -103,7 +103,7 @@ export default function Home() {
               <a className="btn btn-ghost" href={designer.linkedin} target="_blank" rel="noreferrer">
                 linkedin <span className="ar" aria-hidden="true">→</span>
               </a>
-              <a className="btn btn-ghost" href={`${import.meta.env.BASE_URL}cv/Emily_Deeb_CV.pdf`} target="_blank" rel="noreferrer">
+              <a className="btn btn-ghost" href={`${import.meta.env.BASE_URL}CV/Emily_Deeb_CV_DS.pdf`} target="_blank" rel="noreferrer">
                 CV <span className="ar" aria-hidden="true">↓</span>
               </a>
             </div>
