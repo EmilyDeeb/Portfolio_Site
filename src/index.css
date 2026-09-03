@@ -560,27 +560,17 @@ button.btn { line-height: 1; }
   flex: none;
 }
 
-/* Clean, consistent hero button hovers on the navy background.
-   Solid button: light-blue fill → white fill on hover (both with navy text).
-   Ghost button: outlined white → fills light-blue with navy text on hover. */
-.hero__cta .btn {
-  border-color: #afb8fc;
-  background: #afb8fc;
-  color: #0f1c4d;
-}
-.hero__cta .btn:hover {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: #0f1c4d;
-}
+/* Both hero buttons: hollow (outlined) at rest, fill white on hover */
+.hero__cta .btn,
 .hero__cta .btn-ghost {
   background: transparent;
   color: #ffffff;
   border-color: #afb8fc;
 }
+.hero__cta .btn:hover,
 .hero__cta .btn-ghost:hover {
-  background: #afb8fc;
-  border-color: #afb8fc;
+  background: #ffffff;
+  border-color: #ffffff;
   color: #0f1c4d;
 }
 
