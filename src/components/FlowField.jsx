@@ -37,11 +37,10 @@ export default function FlowField({
       canvas.width = Math.floor(width * dpr)
       canvas.height = Math.floor(height * dpr)
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      const margin = 0.06
-      const availW = width * (1 - margin * 2)
-      const availH = height * (1 - margin * 2)
-      const s = Math.min(availW, availH)
-      sx = availW
+      const scale = 1.35   // >1 zooms the network in; try 1.2–1.6
+      const availW = width
+      const s = Math.min(width, height) * scale
+      sx = width * scale
       sy = s
       ox = (width - sx) / 2
       oy = (height - sy) / 2
