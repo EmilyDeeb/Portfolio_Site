@@ -719,8 +719,8 @@ button.btn { line-height: 1; }
 }
 .positioning .h3 {
   max-width: 46ch;
-  font-size: clamp(1.6rem, 3.2vw, 2.35rem);
-  line-height: 1.32;
+  font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+  line-height: 1.4;
   font-style: normal;
   font-weight: 700;
   color: var(--acc);
