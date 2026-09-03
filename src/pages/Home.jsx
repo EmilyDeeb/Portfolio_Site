@@ -4,6 +4,7 @@ import data from '../content/projects.json'
 import { FILTERS } from '../content/categories'
 import ProjectEntry from '../components/ProjectEntry'
 import ProjectEntryMin from '../components/ProjectEntryMin'
+import FlowField from '../components/FlowField'
 
 export default function Home() {
   const { designer, about, projects: allProjects } = data
@@ -22,6 +23,7 @@ export default function Home() {
     <>
       {/* ── Hero ── */}
       <section className="hero hero--centered" aria-label="Hero">
+        <FlowField />
         <div className="hero__center">
           <p className="hero__eyebrow">
             <span>{designer.title}</span>
