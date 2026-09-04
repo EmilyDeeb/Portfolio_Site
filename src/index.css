@@ -1118,7 +1118,7 @@ button.btn { line-height: 1; }
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  border-left: 2px solid var(--acc);
+  border-left: 1px solid var(--acc);
   padding-left: 1.25rem;
 }
 
@@ -1146,7 +1146,7 @@ button.btn { line-height: 1; }
 
 /* Rail section headings */
 .cs-rail__h {
-  font-family: var(--mono);
+  font-family: var(--purple);
   font-size: 0.66rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1292,10 +1292,12 @@ button.btn { line-height: 1; }
   font-size: 0.6rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--acc);
-  opacity: 0.75;
+  color: var(--purple);
+  opacity: 0.85;
   margin-bottom: 0.25rem;
 }
+
+.cs-rail__note.is-current { color: var(--ink); }       /* newest stays dark/readable */
 
 /* =========================================================
    ABOUT — mobile fixes

@@ -329,7 +329,7 @@ export default function ProjectDetail() {
 
                 {revealedCallouts.length > 0 && (
                   <div className="cs-rail__block">
-                    <p className="cs-rail__h">For employers</p>
+                    <p className="cs-rail__h">For stakeholders</p>
                     <ul className="cs-rail__notes">
                       {revealedCallouts.map((c) => (
                         <li
