@@ -37,10 +37,14 @@ export default function ProjectDetail() {
   const callouts = project?.callouts ?? []
   const [revealedCount, setRevealedCount] = useState(0)
   const [railFaded, setRailFaded] = useState(false)
+  const [atBottom, setAtBottom] = useState(false)
+  const [clickedIndex, setClickedIndex] = useState(null)
 
   useEffect(() => {
     setRevealedCount(0)
     setRailFaded(false)
+    setAtBottom(false)
+    setClickedIndex(null)
     const total = callouts.length
     if (!total) return
 
@@ -55,10 +59,13 @@ export default function ProjectDetail() {
       // reveal callouts across the first ~75% of the article, evenly spaced
       const revealSpan = 0.72
       const count = Math.min(total, Math.ceil((progress / revealSpan) * total))
-      setRevealedCount(Math.max(0, count))
+      setRevealedCount(Math.max(1, count))   // at least the first is active
 
       const endEl = document.getElementById('images') || document.getElementById('outcome')
-      if (endEl) setRailFaded(endEl.getBoundingClientRect().top < vh * 0.5)
+      if (endEl) {
+        const nearEnd = endEl.getBoundingClientRect().top < vh * 0.85
+        setAtBottom(nearEnd)
+      }
     }
 
     onScroll()
@@ -70,11 +77,10 @@ export default function ProjectDetail() {
     }
   }, [id, project])
 
-  // Swap mode: show only the current callout (the most recently revealed one)
-  const activeIndex = Math.min(Math.max(revealedCount - 1, 0), Math.max(callouts.length - 1, 0))
-  const currentCallout = callouts.length > 0 && revealedCount > 0
-    ? { ...callouts[activeIndex], i: activeIndex }
-    : null
+  // Active callout follows scroll, unless the user clicks a label to pin one.
+  const scrollActive = Math.min(Math.max(revealedCount - 1, 0), Math.max(callouts.length - 1, 0))
+  const activeIndex = clickedIndex !== null ? clickedIndex : scrollActive
+  const hasCallouts = callouts.length > 0
 
   const sections = useMemo(() => {
     const list = []
@@ -328,20 +334,32 @@ export default function ProjectDetail() {
                   </dl>
                 )}
 
-                {currentCallout && (
+                {hasCallouts && (
                   <div className="cs-rail__block">
                     <p className="cs-rail__h">For stakeholders</p>
                     <ul className="cs-rail__notes">
-                      <li key={currentCallout.i} className="cs-rail__note is-current">
-                        <span className="cs-rail__note-label">{currentCallout.label}</span>
-                        {currentCallout.text}
-                      </li>
+                      {callouts.map((c, i) => (
+                        <li
+                          key={i}
+                          className={`cs-rail__note${i === activeIndex ? ' is-current' : ''}`}
+                        >
+                          <button
+                            type="button"
+                            className="cs-rail__note-label"
+                            onClick={() => setClickedIndex(i)}
+                            aria-expanded={i === activeIndex}
+                          >
+                            {c.label}
+                          </button>
+                          {i === activeIndex && <p className="cs-rail__note-text">{c.text}</p>}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 )}
 
                 {(project.external_url || project.github_url) && (
-                  <div className="cs-rail__links">
+                  <div className={`cs-rail__links${atBottom ? ' is-visible' : ''}`}>
                     {project.external_url && (
                       <a href={project.external_url} target="_blank" rel="noreferrer" className="btn">
                         explore the app <span className="ar" aria-hidden="true">→</span>

@@ -1192,138 +1192,92 @@ button.btn { line-height: 1; }
 .cs-rail__links .btn { justify-content: center; }
 
 /* =========================================================
-   INFO RAIL — scroll-synced findings + future work
+   STAKEHOLDER RAIL — persistent labels, active prose, purple
    ========================================================= */
-
-/* purple accent for future-work */
-:root { --purple: #7c3aed; }
-
-/* rail column ~30% smaller (27rem → 19rem) */
-@media (min-width: 1120px) {
-  .cs-body .cs-grid {
-    grid-template-columns: 12rem minmax(0, 1fr) 19rem !important;
-    gap: 0 clamp(2rem, 4vw, 4rem);
-    align-items: start;
-  }
-}
-
-/* rail internals scaled down */
-.cs-rail__inner { gap: 1.35rem; padding-left: 1.05rem; border-left-width: 2px; }
-.cs-rail__h { font-size: 0.66rem; margin-bottom: 0.65rem; }
-.cs-rail__row { font-size: 0.85rem; padding: 0.5rem 0; }
-
-/* fade the whole rail out at the end */
-.cs-rail {
-  transition: opacity 0.4s var(--ease), visibility 0.4s var(--ease);
-}
-.cs-rail.is-faded { opacity: 0; visibility: hidden; }
-
-/* accumulating note lists */
-.cs-rail__notes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
-.cs-rail__note {
-  position: relative;
-  padding-left: 0.95rem;
-  font-size: 0.82rem;
-  line-height: 1.5;
-  color: var(--ink);
-  opacity: 0.75;                         /* past findings dim */
-  transform: translateY(2px);
-  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), color 0.35s var(--ease);
-  animation: rail-note-in 0.4s var(--ease) both;
-}
-
-.cs-rail__note::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.6em;
-  width: 5px;
-  height: 5px;
-  background: var(--acc);
-  border-radius: 50%;
-}
-.cs-rail__note.is-current { opacity: 1; color: var(--ink); }   /* newest finding is full-strength */
-
-/* Future work — purple pop, full strength (no dimming, upright) */
-.cs-rail__block:has(.cs-rail__notes--future) .cs-rail__h { color: var(--purple); }
-.cs-rail__notes--future .cs-rail__note {
-  font-style: normal;
-  font-size: 0.78rem;
-  color: var(--ink);
-  opacity: 0.9;
-}
-.cs-rail__notes--future .cs-rail__note::before {
-  background: var(--purple);
-  border: none;
-}
-
-@keyframes rail-note-in {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 0.75; transform: translateY(2px); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cs-rail__note { animation: none; }
-}
-
-.hero { position: relative; overflow: hidden; }
-
-/* back layer: the animation, pushed back with blur + dimming */
-.flowfield {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.7;
-  filter: blur(0.05px);
-}
-
-/* front layer: the text */
-.hero__center {
-  position: relative;
-  z-index: 2;
-}
-
-/* Employer callout label */
-.cs-rail__note-label {
-  display: block;
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--purple);
-  opacity: 0.85;
-  margin-bottom: 0.25rem;
-}
-
-/* Stakeholders rail — purple, bold, thinner line (overrides) */
 :root { --purple: #7c3aed; }
 
 .cs-rail__inner { border-left-width: 1px !important; }
 
-/* "For stakeholders" heading — purple + bold */
 .cs-rail__block .cs-rail__h {
-  color: var(--purple) !important;
-  font-weight: 800;
-}
-
-/* callout labels — purple + bold */
-.cs-rail__note .cs-rail__note-label {
   color: var(--purple) !important;
   font-weight: 700;
 }
 
-/* bullet dots — purple */
-.cs-rail__notes .cs-rail__note::before {
-  background: var(--purple) !important;
+/* the list of four callouts */
+.cs-rail__notes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+.cs-rail__note {
+  position: relative;
+  padding-left: 1.1rem;
+}
+.cs-rail__note::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple);
+  opacity: 0.4;                         /* inactive dots dim */
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.cs-rail__note.is-current::before { opacity: 1; transform: scale(1.2); }  /* active dot solid */
+
+/* clickable label */
+.cs-rail__note-label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--purple);
+  font-weight: 700;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.55;                        /* inactive labels dimmer */
+  transition: opacity 0.2s var(--ease);
+  text-align: left;
+}
+.cs-rail__note-label:hover { opacity: 0.85; }
+.cs-rail__note.is-current .cs-rail__note-label { opacity: 1; }
+
+/* the prose under the active label */
+.cs-rail__note-text {
+  margin: 0.4rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--ink);
+  font-weight: 400;
+  animation: rail-note-in 0.3s var(--ease) both;
+}
+@keyframes rail-note-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* callout body text — a touch bolder so it's not too thin */
-.cs-rail__notes .cs-rail__note {
-  color: var(--ink);
-  font-weight: 500;
+/* GitHub / links — hidden until scrolled to the bottom */
+.cs-rail__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.35s var(--ease), visibility 0.35s var(--ease), transform 0.35s var(--ease);
 }
+.cs-rail__links.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.cs-rail__links .btn { justify-content: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-rail__note-text { animation: none; }
+}
+
 
 /* =========================================================
    ABOUT — mobile fixes
