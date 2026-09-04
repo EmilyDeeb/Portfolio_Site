@@ -1297,7 +1297,34 @@ button.btn { line-height: 1; }
   margin-bottom: 0.25rem;
 }
 
-.cs-rail__note.is-current { color: var(--ink); }       /* newest stays dark/readable */
+/* Stakeholders rail — purple, bold, thinner line (overrides) */
+:root { --purple: #7c3aed; }
+
+.cs-rail__inner { border-left-width: 1px !important; }
+
+/* "For stakeholders" heading — purple + bold */
+.cs-rail__block .cs-rail__h {
+  color: var(--purple) !important;
+  font-weight: 700;
+}
+
+/* callout labels — purple + bold */
+.cs-rail__note .cs-rail__note-label {
+  color: var(--purple) !important;
+  font-weight: 700;
+  opacity: 1;
+}
+
+/* bullet dots — purple */
+.cs-rail__notes .cs-rail__note::before {
+  background: var(--purple) !important;
+}
+
+/* callout body text — a touch bolder so it's not too thin */
+.cs-rail__notes .cs-rail__note {
+  color: var(--ink);
+  font-weight: 500;
+}
 
 /* =========================================================
    ABOUT — mobile fixes
