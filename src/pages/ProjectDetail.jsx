@@ -48,7 +48,11 @@ export default function ProjectDetail() {
     const total = callouts.length
     if (!total) return
 
+    let lastY = window.scrollY
     const onScroll = () => {
+      // a real scroll (not a tiny jitter) resumes scroll-follow: release the pin
+      if (Math.abs(window.scrollY - lastY) > 40) setClickedIndex(null)
+      lastY = window.scrollY
       const article = articleRef.current
       if (!article) return
       const rect = article.getBoundingClientRect()
