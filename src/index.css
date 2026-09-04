@@ -1305,14 +1305,13 @@ button.btn { line-height: 1; }
 /* "For stakeholders" heading — purple + bold */
 .cs-rail__block .cs-rail__h {
   color: var(--purple) !important;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* callout labels — purple + bold */
 .cs-rail__note .cs-rail__note-label {
   color: var(--purple) !important;
   font-weight: 700;
-  opacity: 1;
 }
 
 /* bullet dots — purple */
