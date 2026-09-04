@@ -550,7 +550,7 @@ button.btn { line-height: 1; }
    Overrides the default heading colour (--acc / light blue). */
 .hero__title,
 .hero__title em {
-  color: #eef2ff;
+  color: #e2e9ff;
   font-style: normal;
 }
 .hero__cta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: clamp(1.5rem, 3vw, 2.25rem); }
