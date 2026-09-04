@@ -125,19 +125,19 @@
       "callouts": [
         {
           "label": "What it proves",
-          "text": "Nested XGBoost with SHAP separates what built form contributes to retail spend from what catchment demographics explain."
+          "text": "Combining HiMoC morphotopes with street-network betweenness in a nested XGBoost model with SHAP isolates the economic impact of physical form — separating urban fabric from catchment demographics, which gravity models blur together."
         },
         {
           "label": "Strategic use",
-          "text": "Benchmark 3,229 Great Britain retail centres to guide commercial development and asset-acquisition strategy."
+          "text": "Evaluate national retail portfolios across 3,229 centres by finding where morphology naturally boosts spend. This lets developers target high-potential urban fabrics that are more resilient to e-commerce leakage."
         },
         {
           "label": "Local use",
-          "text": "Target the 400m street-network betweenness around a high street to unlock natural footfall."
+          "text": "Target high street-network betweenness within a 400m pedestrian ring to capture natural footfall. Planners can use these morphometrics to guide zoning and high-street regeneration for commercial vitality."
         },
         {
           "label": "Behaviour",
-          "text": "Physical urban form independently drives 30% of predictive spend variance, beyond demographics."
+          "text": "Built form independently accounts for 30% of predictive spend variance — shoppers respond to layout. Books and stationery show the highest morphological sensitivity, suggesting boutique retail thrives in walkable historic streets."
         }
       ]
     },
@@ -231,19 +231,19 @@
       "callouts": [
         {
           "label": "What it proves",
-          "text": "Graph theory on London transit geometry and NUMBAT flows maps structural vulnerability versus operational throughput, not just raw connectivity."
+          "text": "Applying graph theory to London's undirected multi-rail network (401 stations, 467 connections) weighted with NUMBAT flows isolates structural bottlenecks from operational load — distinguishing topological vulnerability from real-world usage, which unweighted assessments miss."
         },
         {
           "label": "Strategic use",
-          "text": "Protect critical structural bridges like West Hampstead to prevent cascading, network-wide failure during disruptions."
+          "text": "Protect high-betweenness broker stations like West Hampstead or Canada Water to prevent sudden systemic fragmentation. Hardening these junctions keeps the network connected during disruption and safeguards city-wide transit efficiency."
         },
         {
           "label": "Local use",
-          "text": "Plan new rail interchanges along the fragile northwest–southeast Overground corridor to close route-redundancy gaps."
+          "text": "Plan new interchanges along the northwest–southeast Overground and Jubilee corridor to add routing redundancy. Targeting these spatial weak spots mitigates cascade failures and gives commuters viable alternative routes."
         },
         {
           "label": "Behaviour",
-          "text": "Closing high-betweenness broker stations severs whole corridors, while high-flow hubs strand the most passengers."
+          "text": "Unweighted centrality overrates peripheral hubs like Stratford and underrates central ones like Bank & Monument. A station can be structurally critical without carrying the most passengers — so resilience strategy must address both."
         }
       ]
     },
@@ -341,19 +341,19 @@
       "callouts": [
         {
           "label": "What it proves",
-          "text": "Random Forest and SHAP on open POI data predict ward-level crime without relying on demographic bias."
+          "text": "A supervised Random Forest with SHAP on 41,502 OpenStreetMap points across 679 wards predicts crime density by what a place does, not who lives there — avoiding the demographic bias of population-based models."
         },
         {
           "label": "Strategic use",
-          "text": "Forecast localised risk at ward scale to target police patrols and resource allocation."
+          "text": "Forecast localised risk at ward scale to target patrols and resources. Authorities can proactively flag high-risk commercial zones from objective, open-source physical opportunity structures."
         },
         {
           "label": "Local use",
-          "text": "Weigh planning decisions on new convenience and fast-food units against localised safety risk."
+          "text": "Adjust licensing and planning for dense convenience and fast-food units in crime-prone wards. These POI–crime links help design safer high streets with natural guardianship and managed pedestrian flow."
         },
         {
           "label": "Behaviour",
-          "text": "Convenience stores generate person crime; cafés more strongly predict property crime — type matters, not just density."
+          "text": "Amenity type sets crime opportunity: convenience stores drive person crime, cafés attract property crime. Strikingly, licensed venues predict weakly — regulatory guardianship (door staff, CCTV) suppresses opportunity despite footfall."
         }
       ]
     },
@@ -444,19 +444,19 @@
       "callouts": [
         {
           "label": "What it proves",
-          "text": "Calibrated spatial interaction modelling isolates travel friction from store size to predict trade flows in data-poor areas."
+          "text": "Calibrating a production-constrained spatial interaction model across 775 output areas with road walk distances quantifies consumer travel friction — using a negative-exponential decay that realistically penalises peripheral placement."
         },
         {
           "label": "Strategic use",
-          "text": "Optimise multi-million-pound retail investment by finding where travel-distance sensitivity outweighs store size."
+          "text": "Benchmark multi-site retail investment by weighing commercial footfall against demographic equity. Calibrated parameters like the 0.117 attractiveness elasticity tell retailers whether a larger store will actually return viable trip volume."
         },
         {
           "label": "Local use",
-          "text": "Position small-format supermarkets in food deserts to reach thousands of vulnerable, car-less residents."
+          "text": "Site a small-format store at peripheral Location B to close Havering's largest food desert and reach 4,682 unserved, car-less residents — maximising access and equity without the cost of an unviable large store."
         },
         {
           "label": "Behaviour",
-          "text": "Outer-London shoppers prioritise proximity over store size — attractiveness elasticity is just 0.117."
+          "text": "Outer-London shoppers are far more sensitive to distance than store size: a ten-fold size increase lifts trips only 30%. Convenience-driven distance decay, not scale, dictates routine suburban patronage."
         }
       ]
     },
@@ -550,19 +550,19 @@
       "callouts": [
         {
           "label": "What it proves",
-          "text": "A linear mixed-effects model nesting MSOAs within boroughs separates local administrative support from housing constraint."
+          "text": "A linear mixed-effects model nesting MSOAs within boroughs, over a custom Housing Portfolio Index, isolates local governance effects from housing constraint — showing municipal support matters as much as home size or cost."
         },
         {
           "label": "Strategic use",
-          "text": "Inform family-formation policy by mapping resilient growth clusters that defy standard displacement theory."
+          "text": "Map 'resilient growth' clusters that defy outward-displacement theory to inform regional and national housing policy — identifying where family formation stays viable and designing funding to sustain it in high-cost cities."
         },
         {
           "label": "Local use",
-          "text": "Direct municipal budget to schools and childcare that sustain young families in high-cost neighbourhoods."
+          "text": "Direct municipal budget to school places, childcare and green space in high-constraint neighbourhoods. This helps borough planners support young families in expensive areas by strengthening local family infrastructure."
         },
         {
           "label": "Behaviour",
-          "text": "Families persist in high-pressure inner boroughs where community networks and demographics support them."
+          "text": "Family formation isn't a linear reaction to housing cost — city-wide correlations are weak. It's mediated by local socio-cultural networks, so families stay in high-pressure inner boroughs when social capital supports them."
         }
       ]
     },
@@ -646,19 +646,19 @@
       "callouts": [
         {
           "label": "What it proves",
-          "text": "Multi-temporal Sentinel-2 and JRC lake analysis in Google Earth Engine automates hazard-and-exposure risk scoring."
+          "text": "A Google Earth Engine pipeline integrating multi-temporal Sentinel-2 and JRC Global Surface Water imagery automates flood-hazard and population-exposure scoring — merging glacier-loss indicators with WorldPop for non-technical users."
         },
         {
           "label": "Strategic use",
-          "text": "Prioritise national disaster-risk budgets across 159 basins using standardised 0–100 impact scores."
+          "text": "Prioritise national climate-adaptation funding across Peru's 159 basins using standardised 0–100 impact scores. This screening lets civil-defence agencies pinpoint high-risk GLOF zones and coordinate mitigation."
         },
         {
           "label": "Local use",
-          "text": "Plan evacuation routes and early-warning around calculated moraine and steep-slope failure risk."
+          "text": "Plan evacuation routes and civil-defence zones from basin-level exposure and moraine-stability calculations. Emergency managers can act on precomputed statistics to protect downstream communities and farmland."
         },
         {
           "label": "Behaviour",
-          "text": "Downstream communities sit where rapid glacier loss and lake growth meet vulnerable farmland."
+          "text": "Andean communities keep settling in active GLOF hazard zones, drawn by the agricultural value of meltwater — a feedback loop balancing immediate survival in fertile valleys against upstream glacial instability."
         }
       ]
     },
@@ -748,19 +748,19 @@
       "callouts": [
         {
           "label": "What it proves",
-          "text": "A dynamic React and Leaflet interface ties FAO macro-trade flows to country-level dietary supply and price shocks."
+          "text": "A dynamic React–Leaflet interface ties macro-trade flows from Harvard's Global Food Twin to FAO country-level dietary supply — translating abstract commodity volumes into daily per-capita energy, protein, fat and carbohydrate."
         },
         {
           "label": "Strategic use",
-          "text": "Identify national import vulnerability to geopolitical conflict and shipping-lane disruption at system scale."
+          "text": "Identify national import vulnerability to geopolitical conflict and maritime bottlenecks at system scale. This lets international organisations forecast how trade closures cascade into nutrition across 200 countries."
         },
         {
           "label": "Local use",
-          "text": "Audit supply dependencies to help food councils promote regional self-reliance over high-risk imports."
+          "text": "Audit supply dependencies to help food councils promote regional self-reliance over high-risk imports. Country-level dietary benchmarks help buffer municipal supply against price shocks and coordinate local sourcing."
         },
         {
           "label": "Behaviour",
-          "text": "Macro supply-chain bottlenecks cascade into local nutritional deficits, squeezing daily calorie and fat intake."
+          "text": "Global trade shocks hit asymmetrically — nutritional deficits in the Global South, minor price rises for wealthy importers. Macro bottlenecks cascade into local behaviour, squeezing essential daily calorie and fat intake."
         }
       ]
     },

@@ -70,10 +70,11 @@ export default function ProjectDetail() {
     }
   }, [id, project])
 
-  const revealedCallouts = useMemo(
-    () => callouts.slice(0, revealedCount).map((c, i) => ({ ...c, i })),
-    [callouts, revealedCount]
-  )
+  // Swap mode: show only the current callout (the most recently revealed one)
+  const activeIndex = Math.min(Math.max(revealedCount - 1, 0), Math.max(callouts.length - 1, 0))
+  const currentCallout = callouts.length > 0 && revealedCount > 0
+    ? { ...callouts[activeIndex], i: activeIndex }
+    : null
 
   const sections = useMemo(() => {
     const list = []
@@ -327,19 +328,14 @@ export default function ProjectDetail() {
                   </dl>
                 )}
 
-                {revealedCallouts.length > 0 && (
+                {currentCallout && (
                   <div className="cs-rail__block">
                     <p className="cs-rail__h">For stakeholders</p>
                     <ul className="cs-rail__notes">
-                      {revealedCallouts.map((c) => (
-                        <li
-                          key={c.i}
-                          className={`cs-rail__note${c.i === revealedCount - 1 ? ' is-current' : ''}`}
-                        >
-                          <span className="cs-rail__note-label">{c.label}</span>
-                          {c.text}
-                        </li>
-                      ))}
+                      <li key={currentCallout.i} className="cs-rail__note is-current">
+                        <span className="cs-rail__note-label">{currentCallout.label}</span>
+                        {currentCallout.text}
+                      </li>
                     </ul>
                   </div>
                 )}
