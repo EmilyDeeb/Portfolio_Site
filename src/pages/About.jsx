@@ -12,7 +12,7 @@ export default function About() {
           <span className="sep" aria-hidden="true">/</span>
           <span className="here">about</span>
         </nav>
-        <h1 className="display page-title page-title--long">Spatial data scientist working in location intelligence and mobility — turning how people move and spend into decisions.</h1>
+        <h2 className="display page-title page-title--long">Spatial data scientist at the intersection of location intelligence, mobility, and design thinking—transforming movement and spending patterns into practical decisions and future insights.</h2>
       </section>
 
       <div className="about-wrap" aria-label="About body">

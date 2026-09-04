@@ -21,8 +21,9 @@
     ],
     "human": "When I’m away from the screen, I enjoy drawing, cooking big meals, hosting friends, meeting new people, and exploring the city on foot—even getting lost on purpose. I’m fascinated by beautiful maps, the Tube system (which brought me to London), and the historical influences that shape our daily lives. I also love people-watching and picking up new skills—most recently, I learned how to create this website.",
     "facts": [
+      { "age": 30, "label": "age" },
       { "label": "based", "value": "London" },
-      { "label": "focus", "value": "Location Intelligence & Mobility" },
+      { "label": "focus", "value": "Spatial Analysis, Location Intelligence & Mobility with a focus on design thinking" },
       { "label": "languages", "value": "Arabic, English, Hebrew" }
     ],
     "contactInvite": "I'm always eager to talk about cities, mobility data, location intelligence, and the ways spatial analysis can drive better decisions—especially where it intersects with design. Whether you have a project in mind, are seeking expertise for a specific role, or just want to connect, I’d love to hear from you."
