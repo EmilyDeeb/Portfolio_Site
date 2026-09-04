@@ -1285,6 +1285,18 @@ button.btn { line-height: 1; }
   z-index: 2;
 }
 
+/* Employer callout label */
+.cs-rail__note-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--acc);
+  opacity: 0.75;
+  margin-bottom: 0.25rem;
+}
+
 /* =========================================================
    ABOUT — mobile fixes
    ========================================================= */

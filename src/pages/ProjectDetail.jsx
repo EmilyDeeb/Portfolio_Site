@@ -32,28 +32,33 @@ export default function ProjectDetail() {
 
   const isUrbanDesign = project?.category === 'urban-design'
 
-  // Scroll-synced rail: accumulate findings/future notes as each body
-  // section is reached; fade the rail out once the images/end is reached.
+  // Scroll-synced rail: reveal the project's employer callouts progressively
+  // as the reader moves down the article, then fade out near the end.
+  const callouts = project?.callouts ?? []
   const [revealedCount, setRevealedCount] = useState(0)
   const [railFaded, setRailFaded] = useState(false)
 
   useEffect(() => {
     setRevealedCount(0)
     setRailFaded(false)
-    const bodyLen = project?.body?.length ?? 0
-    if (!bodyLen) return
+    const total = callouts.length
+    if (!total) return
 
     const onScroll = () => {
-      const trigger = window.innerHeight * 0.55
-      let count = 0
-      for (let i = 0; i < bodyLen; i++) {
-        const el = document.getElementById(`sec-${i}`)
-        if (el && el.getBoundingClientRect().top < trigger) count = i + 1
-      }
-      setRevealedCount(count)
+      const article = articleRef.current
+      if (!article) return
+      const rect = article.getBoundingClientRect()
+      const vh = window.innerHeight
+      // progress through the article body, 0..1
+      const scrolled = Math.min(Math.max(-rect.top + vh * 0.45, 0), rect.height)
+      const progress = rect.height > 0 ? scrolled / rect.height : 0
+      // reveal callouts across the first ~75% of the article, evenly spaced
+      const revealSpan = 0.72
+      const count = Math.min(total, Math.ceil((progress / revealSpan) * total))
+      setRevealedCount(Math.max(0, count))
 
       const endEl = document.getElementById('images') || document.getElementById('outcome')
-      if (endEl) setRailFaded(endEl.getBoundingClientRect().top < trigger)
+      if (endEl) setRailFaded(endEl.getBoundingClientRect().top < vh * 0.5)
     }
 
     onScroll()
@@ -65,17 +70,9 @@ export default function ProjectDetail() {
     }
   }, [id, project])
 
-  const revealedFindings = useMemo(
-    () => (project?.body ?? [])
-      .map((s, i) => ({ ...s, i }))
-      .filter((s) => s.i < revealedCount && s.finding),
-    [project, revealedCount]
-  )
-  const revealedFuture = useMemo(
-    () => (project?.body ?? [])
-      .map((s, i) => ({ ...s, i }))
-      .filter((s) => s.i < revealedCount && s.future),
-    [project, revealedCount]
+  const revealedCallouts = useMemo(
+    () => callouts.slice(0, revealedCount).map((c, i) => ({ ...c, i })),
+    [callouts, revealedCount]
   )
 
   const sections = useMemo(() => {
@@ -330,28 +327,18 @@ export default function ProjectDetail() {
                   </dl>
                 )}
 
-                {revealedFindings.length > 0 && (
+                {revealedCallouts.length > 0 && (
                   <div className="cs-rail__block">
-                    <p className="cs-rail__h">Key findings</p>
+                    <p className="cs-rail__h">For employers</p>
                     <ul className="cs-rail__notes">
-                      {revealedFindings.map((s) => (
+                      {revealedCallouts.map((c) => (
                         <li
-                          key={s.i}
-                          className={`cs-rail__note${s.i === revealedCount - 1 ? ' is-current' : ''}`}
+                          key={c.i}
+                          className={`cs-rail__note${c.i === revealedCount - 1 ? ' is-current' : ''}`}
                         >
-                          {s.finding}
+                          <span className="cs-rail__note-label">{c.label}</span>
+                          {c.text}
                         </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {revealedFuture.length > 0 && (
-                  <div className="cs-rail__block">
-                    <p className="cs-rail__h">Future work</p>
-                    <ul className="cs-rail__notes cs-rail__notes--future">
-                      {revealedFuture.map((s) => (
-                        <li key={s.i} className="cs-rail__note">{s.future}</li>
                       ))}
                     </ul>
                   </div>

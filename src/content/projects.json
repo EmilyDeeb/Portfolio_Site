@@ -9,7 +9,6 @@
     "github": "https://github.com/EmilyDeeb",
     "cv_url": "${import.meta.env.BASE_URL}CV/Emily_Deeb_CV_DS.pdf"
   },
-
   "about": {
     "openToWork": true,
     "positioning": "As a spatial data scientist and designer specializing in location intelligence and mobility, I combine my practical background in design with a passion for modeling consumption behavior, understanding how cities function through data, and evaluating movement and access. I strive to turn these insights into practical, actionable decisions.",
@@ -21,24 +20,44 @@
     ],
     "human": "When I’m away from the screen, I enjoy drawing, cooking big meals, hosting friends, meeting new people, and exploring the city on foot—even getting lost on purpose. I’m fascinated by beautiful maps, the Tube system (which brought me to London), and the historical influences that shape our daily lives. I also love people-watching and picking up new skills—most recently, I learned how to create this website.",
     "facts": [
-      { "age": 30, "label": "age" },
-      { "label": "based", "value": "London" },
-      { "label": "focus", "value": "Spatial Analysis, Location Intelligence & Mobility with a focus on design thinking" },
-      { "label": "languages", "value": "Arabic, English, Hebrew" }
+      {
+        "age": 30,
+        "label": "age"
+      },
+      {
+        "label": "based",
+        "value": "London"
+      },
+      {
+        "label": "focus",
+        "value": "Spatial Analysis, Location Intelligence & Mobility with a focus on design thinking"
+      },
+      {
+        "label": "languages",
+        "value": "Arabic, English, Hebrew"
+      }
     ],
     "contactInvite": "I'm always eager to talk about cities, mobility data, location intelligence, and the ways spatial analysis can drive better decisions—especially where it intersects with design. Whether you have a project in mind, are seeking expertise for a specific role, or just want to connect, I’d love to hear from you."
   },
-
   "projects": [
-
     {
       "id": "retail-morphology",
       "loading_label": "Retail Form",
       "title": "Morphology, Network Position and Retail Spend",
       "subtitle": "Does physical form predict retail expenditure across Great Britain's retail centres — independently of who lives there?",
       "category": "data",
-      "tags": ["Machine learning", "SHAP", "Retail analytics"],
-      "tools": ["Python", "scikit-learn", "SHAP", "GeoPandas", "Spatial autocorrelation"],
+      "tags": [
+        "Machine learning",
+        "SHAP",
+        "Retail analytics"
+      ],
+      "tools": [
+        "Python",
+        "scikit-learn",
+        "SHAP",
+        "GeoPandas",
+        "Spatial autocorrelation"
+      ],
       "year": "2026",
       "location": "Great Britain",
       "role": "Industry dissertation · CACI placement",
@@ -46,17 +65,26 @@
       "featured": true,
       "external_url": "",
       "github_url": "https://github.com/EmilyDeeb/0004_Dissertation",
-
-            "hero_image": "projects/retail-morphology/hero.jpg",
+      "hero_image": "projects/retail-morphology/hero.jpg",
       "images": [
-        { "file": "projects/retail-morphology/01.png", "caption": "Total per-capita annual retail expenditure (left) and shopper-population quintile (right) across the 3,229 centres. Spend per head stays within a narrow range while shopper population varies by orders of magnitude — which is why expenditure is modelled per capita rather than as a total." },
-        { "file": "projects/retail-morphology/02.jpg", "caption": "For each of 3,229 retail centres, the dominant HiMoC morphotope is identified, classified by the type covering the largest share of the centre's tessellation cells (York shown at building scale). Physical form contributed roughly 30% of predictive power against demographics' 70%." },
-        { "file": "projects/retail-morphology/03.png", "caption": "Mean node betweenness of street networks across Great Britain, highlighting two contrasting centres. Brandon, a rural town on limited through-routes, has a boundary mean of 0.1625; Kettering – Northfield Avenue, an out-of-town centre in a dense local network, 0.001. The two detail panels use independent colour scales." },
-        { "file": "projects/retail-morphology/04.png", "caption": "Left: the seven deepest shortfalls in the West Midlands, showing predicted and actual per-capita spend with the gap in brackets. Right: the 25 centres spending furthest below their demographic prediction, sized by shortfall, against all centres where Steadfast Communities exceed 40% of the catchment." }
+        {
+          "file": "projects/retail-morphology/01.png",
+          "caption": "Total per-capita annual retail expenditure (left) and shopper-population quintile (right) across the 3,229 centres. Spend per head stays within a narrow range while shopper population varies by orders of magnitude — which is why expenditure is modelled per capita rather than as a total."
+        },
+        {
+          "file": "projects/retail-morphology/02.jpg",
+          "caption": "For each of 3,229 retail centres, the dominant HiMoC morphotope is identified, classified by the type covering the largest share of the centre's tessellation cells (York shown at building scale). Physical form contributed roughly 30% of predictive power against demographics' 70%."
+        },
+        {
+          "file": "projects/retail-morphology/03.png",
+          "caption": "Mean node betweenness of street networks across Great Britain, highlighting two contrasting centres. Brandon, a rural town on limited through-routes, has a boundary mean of 0.1625; Kettering – Northfield Avenue, an out-of-town centre in a dense local network, 0.001. The two detail panels use independent colour scales."
+        },
+        {
+          "file": "projects/retail-morphology/04.png",
+          "caption": "Left: the seven deepest shortfalls in the West Midlands, showing predicted and actual per-capita spend with the gap in brackets. Right: the 25 centres spending furthest below their demographic prediction, sized by shortfall, against all centres where Steadfast Communities exceed 40% of the catchment."
+        }
       ],
-
       "overview": "An industry-sponsored dissertation with CACI examining whether the physical form of a place — its urban morphology and street-network position — predicts retail spending patterns across Great Britain, independently of demographic composition. Using a machine learning pipeline over 3,229 retail centres, the work quantifies how much 'where and how a place is built' adds to our understanding of where people spend, beyond who lives nearby.",
-
       "body": [
         {
           "heading": "The question",
@@ -80,22 +108,57 @@
           "future": "Longitudinal tracking could confirm if these patterns persist as demographics and retail landscapes shift, allowing direct measurement of decline. Leave-one-region-out refitting would test the model’s generalisability to new areas."
         }
       ],
-
       "metrics": [
-        { "value": "3,229", "label": "retail centres" },
-        { "value": "70 / 30", "label": "demographics vs form" },
-        { "value": "Betweenness", "label": "top physical predictor" }
+        {
+          "value": "3,229",
+          "label": "retail centres"
+        },
+        {
+          "value": "70 / 30",
+          "label": "demographics vs form"
+        },
+        {
+          "value": "Betweenness",
+          "label": "top physical predictor"
+        }
+      ],
+      "callouts": [
+        {
+          "label": "What it proves",
+          "text": "Nested XGBoost with SHAP separates what built form contributes to retail spend from what catchment demographics explain."
+        },
+        {
+          "label": "Strategic use",
+          "text": "Benchmark 3,229 Great Britain retail centres to guide commercial development and asset-acquisition strategy."
+        },
+        {
+          "label": "Local use",
+          "text": "Target the 400m street-network betweenness around a high street to unlock natural footfall."
+        },
+        {
+          "label": "Behaviour",
+          "text": "Physical urban form independently drives 30% of predictive spend variance, beyond demographics."
+        }
       ]
     },
-
     {
       "id": "underground-resilience",
       "loading_label": "Network Resilience",
       "title": "London Underground Resilience",
       "subtitle": "Which stations hold the network together — and where does it break under stress?",
       "category": "data",
-      "tags": ["Network science", "Transport", "Resilience"],
-      "tools": ["Python", "NetworkX", "OSMnx", "TfL NUMBAT", "Spatial analysis"],
+      "tags": [
+        "Network science",
+        "Transport",
+        "Resilience"
+      ],
+      "tools": [
+        "Python",
+        "NetworkX",
+        "OSMnx",
+        "TfL NUMBAT",
+        "Spatial analysis"
+      ],
       "year": "2026",
       "location": "London, UK",
       "role": "Researcher · MSc module project",
@@ -103,18 +166,30 @@
       "featured": true,
       "external_url": "",
       "github_url": "https://github.com/EmilyDeeb/0002_UrbSim",
-
-            "hero_image": "projects/underground-resilience/hero.png",
+      "hero_image": "projects/underground-resilience/hero.png",
       "images": [
-        { "file": "projects/underground-resilience/01.png", "caption": "Betweenness centrality across the London multi-rail network. High-betweenness stations act as brokers — Stratford and Bank & Monument dominate, sitting on the shortest paths between the eastern and central network." },
-        { "file": "projects/underground-resilience/02.png", "caption": "Degree centrality: the number of direct connections per station. This identifies interchange hubs, but treats every link equally regardless of the passenger volume it carries." },
-        { "file": "projects/underground-resilience/03.png", "caption": "Largest connected component after sequential node removal. Degree-based removal fragments the network gradually; betweenness and closeness both trigger a sharp systemic collapse at step 6." },
-        { "file": "projects/underground-resilience/04.png", "caption": "Closeness centrality: how few hops a station needs to reach the rest of the network. Green Park leads, sitting at the topological heart where the Jubilee, Victoria and Piccadilly lines meet." },
-        { "file": "projects/underground-resilience/05.png", "caption": "Disruption reroute: with Bank & Monument closed, the nearest viable walking-plus-tube path to Waterloo — via Cannon Street and the Circle and Bakerloo lines — found using the OSMnx road network and Dijkstra's shortest path." }
+        {
+          "file": "projects/underground-resilience/01.png",
+          "caption": "Betweenness centrality across the London multi-rail network. High-betweenness stations act as brokers — Stratford and Bank & Monument dominate, sitting on the shortest paths between the eastern and central network."
+        },
+        {
+          "file": "projects/underground-resilience/02.png",
+          "caption": "Degree centrality: the number of direct connections per station. This identifies interchange hubs, but treats every link equally regardless of the passenger volume it carries."
+        },
+        {
+          "file": "projects/underground-resilience/03.png",
+          "caption": "Largest connected component after sequential node removal. Degree-based removal fragments the network gradually; betweenness and closeness both trigger a sharp systemic collapse at step 6."
+        },
+        {
+          "file": "projects/underground-resilience/04.png",
+          "caption": "Closeness centrality: how few hops a station needs to reach the rest of the network. Green Park leads, sitting at the topological heart where the Jubilee, Victoria and Piccadilly lines meet."
+        },
+        {
+          "file": "projects/underground-resilience/05.png",
+          "caption": "Disruption reroute: with Bank & Monument closed, the nearest viable walking-plus-tube path to Waterloo — via Cannon Street and the Circle and Bakerloo lines — found using the OSMnx road network and Dijkstra's shortest path."
+        }
       ],
-
       "overview": "A network-science study of the London Underground's structural and operational resilience. Modelling the multi-rail system as a graph of 401 stations and layering on TfL's NUMBAT passenger flows, the project identifies which stations are critical to keeping the network connected, which are critical to keeping passengers moving, and where the system is most vulnerable to a single failure — then models a real closure and its reroute.",
-
       "body": [
         {
           "heading": "Structure vs flow",
@@ -139,22 +214,58 @@
           "future": "Implement a dynamic flow-redistribution simulation to model how demand shifts to neighbouring stations after a closure, rather than assuming static flows — and plan new interchanges along the vulnerable northwest–southeast corridor to mitigate cascade-based collapse."
         }
       ],
-
       "metrics": [
-        { "value": "401", "label": "stations modelled" },
-        { "value": "Step 6", "label": "systemic collapse point" },
-        { "value": "231,733", "label": "peak edge flow (Waterloo & City)" }
+        {
+          "value": "401",
+          "label": "stations modelled"
+        },
+        {
+          "value": "Step 6",
+          "label": "systemic collapse point"
+        },
+        {
+          "value": "231,733",
+          "label": "peak edge flow (Waterloo & City)"
+        }
+      ],
+      "callouts": [
+        {
+          "label": "What it proves",
+          "text": "Graph theory on London transit geometry and NUMBAT flows maps structural vulnerability versus operational throughput, not just raw connectivity."
+        },
+        {
+          "label": "Strategic use",
+          "text": "Protect critical structural bridges like West Hampstead to prevent cascading, network-wide failure during disruptions."
+        },
+        {
+          "label": "Local use",
+          "text": "Plan new rail interchanges along the fragile northwest–southeast Overground corridor to close route-redundancy gaps."
+        },
+        {
+          "label": "Behaviour",
+          "text": "Closing high-betweenness broker stations severs whole corridors, while high-flow hubs strand the most passengers."
+        }
       ]
     },
-
     {
       "id": "crime-poi",
       "loading_label": "Crime Generators",
       "title": "Points of Interest as Crime Generators",
       "subtitle": "Can the mix of amenities in a neighbourhood predict its crime — and does amenity type, not just density, decide which crime?",
       "category": "data",
-      "tags": ["Machine learning", "SHAP", "Spatial analysis"],
-      "tools": ["Python", "Random Forest", "SHAP", "OSMnx", "GeoPandas", "scikit-learn"],
+      "tags": [
+        "Machine learning",
+        "SHAP",
+        "Spatial analysis"
+      ],
+      "tools": [
+        "Python",
+        "Random Forest",
+        "SHAP",
+        "OSMnx",
+        "GeoPandas",
+        "scikit-learn"
+      ],
       "year": "2026",
       "location": "London, UK",
       "role": "Researcher · MSc module project",
@@ -162,18 +273,30 @@
       "featured": false,
       "external_url": "",
       "github_url": "https://github.com/EmilyDeeb/0006_Assessment",
-
       "hero_image": "projects/crime-poi/hero.png",
       "images": [
-        { "file": "projects/crime-poi/01.png", "caption": "41,502 points of interest across 17 amenity categories, extracted from OpenStreetMap and aggregated to 679 London wards." },
-        { "file": "projects/crime-poi/02.png", "caption": "Spatial distribution of person/society crime, property crime and amenity density — all showing strong centre-periphery gradients." },
-        { "file": "projects/crime-poi/03.png", "caption": "SHAP feature contributions for person/society crime: convenience-store density dominates; night-time venues cluster near zero." },
-        { "file": "projects/crime-poi/04.png", "caption": "SHAP for property crime: café density rises to a top predictor — evidence that amenity type, not just density, shapes which crime an area generates." },
-        { "file": "projects/crime-poi/05.png", "caption": "Spatial residuals: underprediction concentrates in outer east and west London, where structural conditions drive crime beyond amenity configuration." }
+        {
+          "file": "projects/crime-poi/01.png",
+          "caption": "41,502 points of interest across 17 amenity categories, extracted from OpenStreetMap and aggregated to 679 London wards."
+        },
+        {
+          "file": "projects/crime-poi/02.png",
+          "caption": "Spatial distribution of person/society crime, property crime and amenity density — all showing strong centre-periphery gradients."
+        },
+        {
+          "file": "projects/crime-poi/03.png",
+          "caption": "SHAP feature contributions for person/society crime: convenience-store density dominates; night-time venues cluster near zero."
+        },
+        {
+          "file": "projects/crime-poi/04.png",
+          "caption": "SHAP for property crime: café density rises to a top predictor — evidence that amenity type, not just density, shapes which crime an area generates."
+        },
+        {
+          "file": "projects/crime-poi/05.png",
+          "caption": "Spatial residuals: underprediction concentrates in outer east and west London, where structural conditions drive crime beyond amenity configuration."
+        }
       ],
-
       "overview": "A supervised machine learning study testing whether the spatial layout of urban amenities predicts crime density across 679 London wards — and whether specific amenity types act as generators for specific crime types. Grounded in Routine Activity Theory and using only open POI data (no demographics), the work models person/society and property crime separately and uses SHAP to decompose which amenities drive each.",
-
       "body": [
         {
           "heading": "The question",
@@ -201,22 +324,57 @@
           "future": "Future models should integrate socio-economic deprivation indices (such as the Index of Multiple Deprivation) alongside open-source points of interest to capture structural crime drivers in outer boroughs."
         }
       ],
-
       "metrics": [
-        { "value": "679", "label": "wards analysed" },
-        { "value": "41,502", "label": "points of interest" },
-        { "value": "R² 0.72", "label": "property crime (RF)" }
+        {
+          "value": "679",
+          "label": "wards analysed"
+        },
+        {
+          "value": "41,502",
+          "label": "points of interest"
+        },
+        {
+          "value": "R² 0.72",
+          "label": "property crime (RF)"
+        }
+      ],
+      "callouts": [
+        {
+          "label": "What it proves",
+          "text": "Random Forest and SHAP on open POI data predict ward-level crime without relying on demographic bias."
+        },
+        {
+          "label": "Strategic use",
+          "text": "Forecast localised risk at ward scale to target police patrols and resource allocation."
+        },
+        {
+          "label": "Local use",
+          "text": "Weigh planning decisions on new convenience and fast-food units against localised safety risk."
+        },
+        {
+          "label": "Behaviour",
+          "text": "Convenience stores generate person crime; cafés more strongly predict property crime — type matters, not just density."
+        }
       ]
     },
-
     {
       "id": "havering-retail-siting",
       "loading_label": "Retail Siting",
       "title": "Where Should the Supermarket Go?",
       "subtitle": "Spatial interaction modelling for retail siting in Havering — and the trade-off between commercial return and equitable access.",
       "category": "data",
-      "tags": ["Spatial interaction models", "Retail siting", "Accessibility"],
-      "tools": ["Python", "SpInt / Poisson GLM", "OSMnx", "Geolytix", "GeoPandas"],
+      "tags": [
+        "Spatial interaction models",
+        "Retail siting",
+        "Accessibility"
+      ],
+      "tools": [
+        "Python",
+        "SpInt / Poisson GLM",
+        "OSMnx",
+        "Geolytix",
+        "GeoPandas"
+      ],
       "year": "2026",
       "location": "Havering, London",
       "role": "Researcher · MSc module project",
@@ -224,17 +382,26 @@
       "featured": false,
       "external_url": "",
       "github_url": "https://github.com/EmilyDeeb/0002_UrbSim",
-
-            "hero_image": "projects/havering-retail-siting/hero.png",
+      "hero_image": "projects/havering-retail-siting/hero.png",
       "images": [
-        { "file": "projects/havering-retail-siting/01.png", "caption": "Predicted trips to a new supermarket at Location A and Location B, at small (280m²) and large (2,800m²) formats, from the production-constrained spatial interaction model calibrated on observed mobility flows across 775 output areas." },
-        { "file": "projects/havering-retail-siting/02.png", "caption": "Net trip preference between the two candidate locations. Pink favours the central Location A, blue the southern Location B — revealing a systemic split between the well-served core and the underserved south." },
-        { "file": "projects/havering-retail-siting/03.png", "caption": "Distance decay under normal conditions versus a simulated bus strike. Doubling the decay parameter steepens the curve sharply; the shaded area is the increase in spatial friction, which compounds most for the peripheral Location B." },
-        { "file": "projects/havering-retail-siting/04.png", "caption": "15-minute walking catchments for the two candidate locations. Location B (17 output areas, 5,729 residents) reaches a denser local population than Location A (12 output areas, 4,254), directly addressing the southern access gap." }
+        {
+          "file": "projects/havering-retail-siting/01.png",
+          "caption": "Predicted trips to a new supermarket at Location A and Location B, at small (280m²) and large (2,800m²) formats, from the production-constrained spatial interaction model calibrated on observed mobility flows across 775 output areas."
+        },
+        {
+          "file": "projects/havering-retail-siting/02.png",
+          "caption": "Net trip preference between the two candidate locations. Pink favours the central Location A, blue the southern Location B — revealing a systemic split between the well-served core and the underserved south."
+        },
+        {
+          "file": "projects/havering-retail-siting/03.png",
+          "caption": "Distance decay under normal conditions versus a simulated bus strike. Doubling the decay parameter steepens the curve sharply; the shaded area is the increase in spatial friction, which compounds most for the peripheral Location B."
+        },
+        {
+          "file": "projects/havering-retail-siting/04.png",
+          "caption": "15-minute walking catchments for the two candidate locations. Location B (17 output areas, 5,729 residents) reaches a denser local population than Location A (12 output areas, 4,254), directly addressing the southern access gap."
+        }
       ],
-
       "overview": "A spatial interaction modelling study evaluating where a new supermarket should open in Havering — and for whom. Calibrating a production-constrained gravity model on observed mobility flows, the project tests two candidate locations and store sizes, stress-tests them under a simulated transport shock, and weighs the commercially optimal site against the one that closes a genuine access gap for elderly, car-less residents.",
-
       "body": [
         {
           "heading": "The model",
@@ -260,22 +427,57 @@
           "future": "Adopt a localised, catchment-based accessibility model that measures residents gaining direct access rather than borough-wide trips attracted — and integrate a coupled Land Use Transport Interaction (LUTI) model to simulate feedback between employment, residential location and retail demand."
         }
       ],
-
       "metrics": [
-        { "value": "775", "label": "output areas modelled" },
-        { "value": "18.1%", "label": "borough without walkable access" },
-        { "value": "4,682", "label": "residents newly served by B" }
+        {
+          "value": "775",
+          "label": "output areas modelled"
+        },
+        {
+          "value": "18.1%",
+          "label": "borough without walkable access"
+        },
+        {
+          "value": "4,682",
+          "label": "residents newly served by B"
+        }
+      ],
+      "callouts": [
+        {
+          "label": "What it proves",
+          "text": "Calibrated spatial interaction modelling isolates travel friction from store size to predict trade flows in data-poor areas."
+        },
+        {
+          "label": "Strategic use",
+          "text": "Optimise multi-million-pound retail investment by finding where travel-distance sensitivity outweighs store size."
+        },
+        {
+          "label": "Local use",
+          "text": "Position small-format supermarkets in food deserts to reach thousands of vulnerable, car-less residents."
+        },
+        {
+          "label": "Behaviour",
+          "text": "Outer-London shoppers prioritise proximity over store size — attractiveness elasticity is just 0.117."
+        }
       ]
     },
-
     {
       "id": "fertility-london",
       "loading_label": "Family Formation",
       "title": "Where Families Still Form Under Constraint",
       "subtitle": "Mapping where early family formation persists in London despite housing pressure — and why housing alone doesn't explain it.",
       "category": "urban-design",
-      "tags": ["Spatial statistics", "Mixed-effects models", "Housing"],
-      "tools": ["R", "PCA", "Linear Mixed-Effects", "K-means", "Spatial analysis"],
+      "tags": [
+        "Spatial statistics",
+        "Mixed-effects models",
+        "Housing"
+      ],
+      "tools": [
+        "R",
+        "PCA",
+        "Linear Mixed-Effects",
+        "K-means",
+        "Spatial analysis"
+      ],
       "year": "2025",
       "location": "London, UK",
       "role": "Researcher · MSc module project",
@@ -283,17 +485,26 @@
       "featured": false,
       "external_url": "",
       "github_url": "https://github.com/EmilyDeeb/0007-QM",
-
       "hero_image": "projects/fertility-london/hero.png",
       "images": [
-        { "file": "projects/fertility-london/01.png", "caption": "Spatial concentration of fertility across London MSOAs — distinct higher-fertility clusters in North and North-East London." },
-        { "file": "projects/fertility-london/02.png", "caption": "The Housing Portfolio Index (HPI), combining housing-cost pressure and small-dwelling prevalence via PCA." },
-        { "file": "projects/fertility-london/03.png", "caption": "Four neighbourhood types by housing pressure and fertility — including 'Resilient Growth': high fertility despite high constraint." },
-        { "file": "projects/fertility-london/04.png", "caption": "Mixed-effects model residuals: spatial clustering that persists even after accounting for housing pressure and borough effects." }
+        {
+          "file": "projects/fertility-london/01.png",
+          "caption": "Spatial concentration of fertility across London MSOAs — distinct higher-fertility clusters in North and North-East London."
+        },
+        {
+          "file": "projects/fertility-london/02.png",
+          "caption": "The Housing Portfolio Index (HPI), combining housing-cost pressure and small-dwelling prevalence via PCA."
+        },
+        {
+          "file": "projects/fertility-london/03.png",
+          "caption": "Four neighbourhood types by housing pressure and fertility — including 'Resilient Growth': high fertility despite high constraint."
+        },
+        {
+          "file": "projects/fertility-london/04.png",
+          "caption": "Mixed-effects model residuals: spatial clustering that persists even after accounting for housing pressure and borough effects."
+        }
       ],
-
       "overview": "A spatial-statistical study of where early family formation remains viable in London despite intense housing pressure. Building a composite Housing Portfolio Index and working through correlation, regression and linear mixed-effects models, the analysis shows that housing constraint is a weak city-wide predictor of fertility but a meaningful one within borough contexts — and that the neighbourhoods where families persist under pressure are shaped as much by demographics and culture as by dwellings.",
-
       "body": [
         {
           "heading": "The question",
@@ -322,22 +533,57 @@
           "finding": "A selective neighborhood typology identifies 47 'Resilient Growth' neighborhoods—defined as high fertility despite severe housing pressure—concentrated primarily in Hackney (7), Haringey (5), and Newham (3)."
         }
       ],
-
       "metrics": [
-        { "value": "~960", "label": "MSOAs analysed" },
-        { "value": "PCA + LME", "label": "modelling approach" },
-        { "value": "47", "label": "'resilient growth' neighbourhoods" }
+        {
+          "value": "~960",
+          "label": "MSOAs analysed"
+        },
+        {
+          "value": "PCA + LME",
+          "label": "modelling approach"
+        },
+        {
+          "value": "47",
+          "label": "'resilient growth' neighbourhoods"
+        }
+      ],
+      "callouts": [
+        {
+          "label": "What it proves",
+          "text": "A linear mixed-effects model nesting MSOAs within boroughs separates local administrative support from housing constraint."
+        },
+        {
+          "label": "Strategic use",
+          "text": "Inform family-formation policy by mapping resilient growth clusters that defy standard displacement theory."
+        },
+        {
+          "label": "Local use",
+          "text": "Direct municipal budget to schools and childcare that sustain young families in high-cost neighbourhoods."
+        },
+        {
+          "label": "Behaviour",
+          "text": "Families persist in high-pressure inner boroughs where community networks and demographics support them."
+        }
       ]
     },
-
     {
       "id": "cordillera-blanca",
       "loading_label": "GLOF Risk",
       "title": "Cordillera Blanca Risk App",
       "subtitle": "A geospatial screening tool putting glacial flood risk into the hands of non-specialist decision-makers in the Peruvian Andes.",
       "category": "urban-design",
-      "tags": ["Remote sensing", "Climate risk", "Decision-support tool"],
-      "tools": ["Google Earth Engine", "Sentinel-2", "JRC Global Surface Water", "SRTM", "JavaScript"],
+      "tags": [
+        "Remote sensing",
+        "Climate risk",
+        "Decision-support tool"
+      ],
+      "tools": [
+        "Google Earth Engine",
+        "Sentinel-2",
+        "JRC Global Surface Water",
+        "SRTM",
+        "JavaScript"
+      ],
       "year": "2026",
       "location": "Áncash, Peru",
       "role": "Data & methodology integration",
@@ -347,16 +593,22 @@
       "featured": false,
       "external_url": "https://emilydeeb.github.io/0025_BSA-Group/",
       "github_url": "https://github.com/EmilyDeeb/0025_BSA-Group",
-
       "hero_image": "projects/cordillera-blanca/hero.png",
       "images": [
-        { "file": "projects/cordillera-blanca/01.png", "caption": "Basin-level flood impact across 159 river micro-basins, scored 0–100 by combining hazard and exposure into a single interpretable index." },
-        { "file": "projects/cordillera-blanca/02.png", "caption": "Per-basin statistics panel: lake growth, glacier recession, land-cover exposure and population, available in Spanish and English." },
-        { "file": "projects/cordillera-blanca/03.png", "caption": "Glacier recession (2019–2025) and glacial lake growth (2010–2021) derived from Sentinel-2 and JRC Global Surface Water in Google Earth Engine." }
+        {
+          "file": "projects/cordillera-blanca/01.png",
+          "caption": "Basin-level flood impact across 159 river micro-basins, scored 0–100 by combining hazard and exposure into a single interpretable index."
+        },
+        {
+          "file": "projects/cordillera-blanca/02.png",
+          "caption": "Per-basin statistics panel: lake growth, glacier recession, land-cover exposure and population, available in Spanish and English."
+        },
+        {
+          "file": "projects/cordillera-blanca/03.png",
+          "caption": "Glacier recession (2019–2025) and glacial lake growth (2010–2021) derived from Sentinel-2 and JRC Global Surface Water in Google Earth Engine."
+        }
       ],
-
       "overview": "A geospatial decision-support tool built for CENEPRED, Peru's national disaster-risk agency, that screens Glacial Lake Outburst Flood (GLOF) risk across 159 river micro-basins in the Cordillera Blanca. It combines glacier retreat, lake expansion and population exposure into a single basin-level score, designed for users without remote-sensing expertise. My role was to take each analytical section's methodology and integrate it into one coherent codebase, then test the full pipeline end-to-end.",
-
       "body": [
         {
           "heading": "Context",
@@ -377,22 +629,58 @@
           "finding": "The resulting web application runs entirely on Google Earth Engine to bypass local processing limits, rendering interactive risk maps and on-demand basin statistics in both English and Spanish for non-specialist disaster managers."
         }
       ],
-
       "metrics": [
-        { "value": "159", "label": "river basins analysed" },
-        { "value": "16%", "label": "lake-area growth 2010–2021" },
-        { "value": "7.4%", "label": "glacier loss 2019–2025" }
+        {
+          "value": "159",
+          "label": "river basins analysed"
+        },
+        {
+          "value": "16%",
+          "label": "lake-area growth 2010–2021"
+        },
+        {
+          "value": "7.4%",
+          "label": "glacier loss 2019–2025"
+        }
+      ],
+      "callouts": [
+        {
+          "label": "What it proves",
+          "text": "Multi-temporal Sentinel-2 and JRC lake analysis in Google Earth Engine automates hazard-and-exposure risk scoring."
+        },
+        {
+          "label": "Strategic use",
+          "text": "Prioritise national disaster-risk budgets across 159 basins using standardised 0–100 impact scores."
+        },
+        {
+          "label": "Local use",
+          "text": "Plan evacuation routes and early-warning around calculated moraine and steep-slope failure risk."
+        },
+        {
+          "label": "Behaviour",
+          "text": "Downstream communities sit where rapid glacier loss and lake growth meet vulnerable farmland."
+        }
       ]
     },
-
     {
       "id": "food-shock",
       "loading_label": "Food Shock",
       "title": "Food Shock: Global Supply Chain Fragility",
       "subtitle": "An interactive map of global food supply chain disruption — trade flows, price shocks and import dependency across 180+ countries.",
       "category": "urban-design",
-      "tags": ["Interactive web", "Data visualisation", "Supply chains"],
-      "tools": ["JavaScript", "React", "Vite", "Leaflet", "Recharts", "FAO data"],
+      "tags": [
+        "Interactive web",
+        "Data visualisation",
+        "Supply chains"
+      ],
+      "tools": [
+        "JavaScript",
+        "React",
+        "Vite",
+        "Leaflet",
+        "Recharts",
+        "FAO data"
+      ],
       "year": "2026",
       "location": "Global",
       "role": "Base site, map & side panel · integration lead",
@@ -402,17 +690,26 @@
       "featured": false,
       "external_url": "https://emilydeeb.github.io/Group_Project_0028/",
       "github_url": "https://github.com/EmilyDeeb/Group_Project_0028",
-
       "hero_image": "projects/food-shock/hero.png",
       "images": [
-        { "file": "projects/food-shock/0.jpg", "caption": "Global maritime and land trade flows across 180+ countries, filtered by food category. Line weight reflects trade volume between origin and destination." },
-        { "file": "projects/food-shock/1.png", "caption": "Country-level side panel: import origins, commodity breakdown, and a nutrition tab benchmarking per-capita dietary supply against world averages." },
-        { "file": "projects/food-shock/2.png", "caption": "FAO Food Price Index timeline with annotated crisis events — COVID-19, the Ukraine war, the 2026 conflict — each linking the map to that disruption." },
-        { "file": "projects/food-shock/3.png", "caption": "Crisis view showing disrupted trade corridors and affected-flow exposure by country." }
+        {
+          "file": "projects/food-shock/0.jpg",
+          "caption": "Global maritime and land trade flows across 180+ countries, filtered by food category. Line weight reflects trade volume between origin and destination."
+        },
+        {
+          "file": "projects/food-shock/1.png",
+          "caption": "Country-level side panel: import origins, commodity breakdown, and a nutrition tab benchmarking per-capita dietary supply against world averages."
+        },
+        {
+          "file": "projects/food-shock/2.png",
+          "caption": "FAO Food Price Index timeline with annotated crisis events — COVID-19, the Ukraine war, the 2026 conflict — each linking the map to that disruption."
+        },
+        {
+          "file": "projects/food-shock/3.png",
+          "caption": "Crisis view showing disrupted trade corridors and affected-flow exposure by country."
+        }
       ],
-
       "overview": "Food Shock is an interactive web application that maps the fragility of global food supply chains — visualising maritime and land trade flows, price shocks and import dependency across 180+ countries and 82 commodities. Built on FAO trade data and Harvard's Global Food Twin dataset, it turns abstract supply-chain disruption into a spatial story users can navigate. I was responsible for the base site, the map and side panel, and pulling the team's work together into one coherent application.",
-
       "body": [
         {
           "heading": "The problem",
@@ -434,14 +731,39 @@
           "future": "Future technical iterations should implement automated pipelines to ingest live price indices and real-time trade data, replacing the static 2020 baseline with a dynamic tracking system."
         }
       ],
-
       "metrics": [
-        { "value": "180+", "label": "countries covered" },
-        { "value": "82", "label": "food commodities" },
-        { "value": "3", "label": "crisis events mapped" }
+        {
+          "value": "180+",
+          "label": "countries covered"
+        },
+        {
+          "value": "82",
+          "label": "food commodities"
+        },
+        {
+          "value": "3",
+          "label": "crisis events mapped"
+        }
+      ],
+      "callouts": [
+        {
+          "label": "What it proves",
+          "text": "A dynamic React and Leaflet interface ties FAO macro-trade flows to country-level dietary supply and price shocks."
+        },
+        {
+          "label": "Strategic use",
+          "text": "Identify national import vulnerability to geopolitical conflict and shipping-lane disruption at system scale."
+        },
+        {
+          "label": "Local use",
+          "text": "Audit supply dependencies to help food councils promote regional self-reliance over high-risk imports."
+        },
+        {
+          "label": "Behaviour",
+          "text": "Macro supply-chain bottlenecks cascade into local nutritional deficits, squeezing daily calorie and fat intake."
+        }
       ]
     },
-
     {
       "id": "hinge-idea",
       "hidden": true,
@@ -449,8 +771,13 @@
       "title": "Hinge Website (Placeholder)",
       "subtitle": "Placeholder for upcoming project — to be built out.",
       "category": "data",
-      "tags": ["Interactive web", "In progress"],
-      "tools": ["TBD"],
+      "tags": [
+        "Interactive web",
+        "In progress"
+      ],
+      "tools": [
+        "TBD"
+      ],
       "year": "2025",
       "location": "London, UK",
       "role": "Developer & designer",
@@ -458,27 +785,34 @@
       "featured": false,
       "external_url": "",
       "github_url": "https://github.com/EmilyDeeb/REPO-NAME",
-
       "hero_image": "projects/hinge-idea/hero.png",
       "images": [
-        { "file": "projects/hinge-idea/01.png", "caption": "Placeholder caption — replace with project imagery." }
+        {
+          "file": "projects/hinge-idea/01.png",
+          "caption": "Placeholder caption — replace with project imagery."
+        }
       ],
-
       "overview": "Placeholder entry for the Hinge website idea. Fill in the overview, body sections and metrics once the project is built. This entry is hidden from the live site (hidden: true) until you're ready to publish it.",
-
       "body": [
         {
           "heading": "Concept",
           "text": "Placeholder text — describe the idea, the problem it addresses, and your approach here."
         }
       ],
-
       "metrics": [
-        { "value": "—", "label": "TBD" },
-        { "value": "—", "label": "TBD" },
-        { "value": "—", "label": "TBD" }
+        {
+          "value": "—",
+          "label": "TBD"
+        },
+        {
+          "value": "—",
+          "label": "TBD"
+        },
+        {
+          "value": "—",
+          "label": "TBD"
+        }
       ]
     }
-
   ]
 }
